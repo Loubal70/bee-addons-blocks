@@ -1,0 +1,94 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "bee-addons-blocks/curvy",
+	"version": "0.1.0",
+	"title": "Curvy",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Curvy shape dividers to make dividing page content more interesting.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"color": {
+			"background": true,
+			"link": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true
+		}
+	},
+	"attributes": {
+		"style": {
+			"type": "object",
+			"default": {
+				"color": {
+					"background": "#fbde20"
+				},
+				"spacing": {
+					"padding": {
+						"top": "80px",
+						"right": "50px",
+						"bottom": "80px",
+						"left": "50px"
+					}
+				}
+			}
+		},
+		"enableTopCurve": {
+			"type": "boolean",
+			"default": false
+		},
+		"topCurveWidth": {
+			"type": "number",
+			"default": 100
+		},
+		"topCurveHeight": {
+			"type": "number",
+			"default": 100
+		},
+		"topCurveFlipX": {
+			"type": "boolean",
+			"default": false
+		},
+		"topCurveFlipY": {
+			"type": "boolean",
+			"default": false
+		},
+		"topCurveColor": {
+			"type": "string",
+			"default": "#FFFFFF"
+		},
+		"enableBottomCurve": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomCurveWidth": {
+			"type": "number",
+			"default": 100
+		},
+		"bottomCurveHeight": {
+			"type": "number",
+			"default": 100
+		},
+		"bottomCurveFlipX": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomCurveFlipY": {
+			"type": "boolean",
+			"default": false
+		},
+		"bottomCurveColor": {
+			"type": "string",
+			"default": "#FFFFFF"
+		}
+	},
+	"textdomain": "beeAddonsBlocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
