@@ -23,5 +23,12 @@
  */
 
 add_action( 'init', function () {
+	add_filter('block_categories_all', function($categories) {
+		array_unshift($categories, [
+			'slug' => 'beeAddonsBlocks',
+			'title' => 'Bee Addons Blocks',
+		]);
+		return $categories;
+	});
 	register_block_type( __DIR__ . '/build/blocks/curvy' );
 } );

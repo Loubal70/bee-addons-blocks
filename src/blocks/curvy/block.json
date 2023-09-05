@@ -4,10 +4,25 @@
 	"name": "bee-addons-blocks/curvy",
 	"version": "0.1.0",
 	"title": "Curvy",
-	"category": "widgets",
+	"category": "beeAddonsBlocks",
 	"icon": "smiley",
 	"description": "Curvy shape dividers to make dividing page content more interesting.",
-	"example": {},
+	"example": {
+		"innerBlocks": [
+			{
+				"name": "core/heading",
+				"attributes": {
+					"content": "Lorem ipsum dolor sit amet"
+				}
+			},
+			{
+				"name": "core/paragraph",
+				"attributes": {
+					"content": "This is an example of curvy block"
+				}
+			}
+		]
+	},
 	"supports": {
 		"html": false,
 		"color": {
@@ -19,6 +34,24 @@
 			"padding": true
 		}
 	},
+	"variations": [
+		{
+			"name": "topOnly",
+			"title": "Curvy - Top Only",
+			"attributes": {
+				"enableTopCurve": true,
+				"enableBottomCurve": false
+			}
+		},
+		{
+			"name": "bottomOnly",
+			"title": "Curvy - Bottom Only",
+			"attributes": {
+				"enableTopCurve": false,
+				"enableBottomCurve": true
+			}
+		}
+	],
 	"attributes": {
 		"style": {
 			"type": "object",
