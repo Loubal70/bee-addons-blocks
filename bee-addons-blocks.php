@@ -33,6 +33,7 @@ final class BeeAddonsBlocks
 		$this->setConstants();
 		$this->registerAutoload();
 
+		Assets::boot();
 		Blocks::boot();
 	}
 
