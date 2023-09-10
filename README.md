@@ -17,7 +17,7 @@ about previous versions.
 </ul>
 <h3>New Blocks and Effect</h3>
 <ul>
-	<li><b>ClickyGroup and ClickButton</b> allows you to create customizable buttons with a link
+	<li><b>ClickyGroup and ClickyButton</b> allows you to create customizable buttons with a link
 		to your posts and custom post types
 	</li>
 	<li>
