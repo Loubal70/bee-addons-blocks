@@ -1,0 +1,14 @@
+{
+	"name": "loubal70/bee-addons-blocks",
+	"autoload": {
+		"psr-4": {
+			"BeeAddonsBlocks\\": "classes/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Louis Boulanger",
+			"email": "louis.boulanger.work@gmail.com"
+		}
+	]
+}
