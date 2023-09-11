@@ -20,8 +20,8 @@ about previous versions.
 	<li><b>ClickyGroup and ClickyButton</b> allows you to create customizable buttons with a link
 		to your posts and custom post types
 	</li>
-	<li><b>Media Blurred Background</b> allows you to import an image with text on top with or without a
-		blurry effect in the background!
+	<li><b>Media Blurred Background</b> allows you to import an image with text with or without a
+		blurry effect in the text background!
 	</li>
 	<li>
 		<b>Low Hightlight</b> allows you to select a text (paragraph, title, etc.) and apply a very nice low hightlight
