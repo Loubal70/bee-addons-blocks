@@ -222,6 +222,7 @@ function Save() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   parseRadius: function() { return /* binding */ parseRadius; },
 /* harmony export */   parseValue: function() { return /* binding */ parseValue; }
 /* harmony export */ });
 const parseValue = value => {
@@ -231,6 +232,21 @@ const parseValue = value => {
     return `var(--wp--${varValue})`;
   }
   return value;
+};
+const parseRadius = (value, onlyBottom) => {
+  if (onlyBottom === true) {
+    if (typeof value === 'object') {
+      return `0 0 ${value.bottomRight} ${value.bottomLeft}`;
+    } else {
+      return `0 0 ${value} ${value}`;
+    }
+  } else {
+    if (typeof value === 'object') {
+      return `${value.topLeft} ${value.topRight} ${value.bottomRight} ${value.bottomLeft}`;
+    } else {
+      return value;
+    }
+  }
 };
 
 /***/ }),
