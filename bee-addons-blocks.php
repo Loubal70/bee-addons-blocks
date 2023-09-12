@@ -4,7 +4,7 @@
  * Description:       Plugin who add new fantastics gutenberg blocks
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           0.1.1
  * Author:            Loubal70
  * Author URI:        https://louis-boulanger.fr/
  * License:           GPL-2.0-or-later
@@ -81,7 +81,7 @@ final class BeeAddonsBlocks
 	public static function parseRadius($value, $onlyBottom = false): ?string
 	{
 		if ($onlyBottom === true) {
-			$value = is_array($value) ? $value['bottomRight'] . ' ' . $value['bottomLeft'] : $value . ' ' . $value;
+			$value = is_array($value) ? '0 0 '. $value['bottomRight'] . ' ' . $value['bottomLeft'] : "0 0 $value $value";
 		} else {
 			$value = is_array($value) ? "{$value['topLeft']} {$value['topRight']} {$value['bottomRight']} {$value['bottomLeft']}" : $value;
 		}

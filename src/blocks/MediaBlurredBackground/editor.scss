@@ -12,24 +12,36 @@
 		color: black !important;
 	}
 
-	img + .innerText{
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 5px;
+	&.is-selected .wp-block-heading{
+		margin: 0;
+	}
 
+	img{
+		display: block;
+		height: 100%;
 
-		.wp-block-heading{
-			margin: 0 0 .5rem 0;
+		+ .innerText{
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+
+			*:only-child{
+				margin: 0;
+			}
+
+			.wp-block-paragraph{
+				margin: .5rem 0
+			}
+
+			& :last-child{
+				margin-bottom: 0;
+			}
 		}
+	}
 
-		.wp-block-paragraph{
-			margin: .5rem 0
-		}
-
-		& :last-child{
-			margin-bottom: 0;
-		}
+	.innerText .wp-block-columns{
+		margin-bottom: 0;
 	}
 }
 

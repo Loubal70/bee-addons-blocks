@@ -9,6 +9,12 @@
 	"description": "Photo with text on blurred background.",
 	"supports": {
 		"html": false,
+		"align": true,
+		"color": {
+			"background": true,
+			"gradients": true,
+			"text": false
+		},
 		"__experimentalBorder": {
 			"radius": true,
 			"__experimentalDefaultControls": {
@@ -20,10 +26,6 @@
 		"InnerTextPadding": {
 			"type": "number",
 			"default": 10
-		},
-		"InnerTextBackground": {
-			"type": "string",
-			"default": "transparent"
 		},
 		"InnerTextBlur": {
 			"type": "number",

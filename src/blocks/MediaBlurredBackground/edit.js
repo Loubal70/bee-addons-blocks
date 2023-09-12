@@ -52,8 +52,7 @@ export default function Edit(props) {
 			[ 'core/heading', { level: 2, placeholder: __('Title', metadata.textdomain)} ],
 			[ 'core/paragraph', { placeholder: __('Your paragraph', metadata.textdomain) } ]
 		],
-		allowedBlocks: ['core/heading, core/paragraph'],
-
+		allowedBlocks: ['core/group', 'core/heading, core/paragraph', 'core/list', 'core/button', 'core/columns'],
 	});
 	const blockRadius = props.attributes.style?.border?.radius || 0;
 	return (
@@ -88,11 +87,13 @@ export default function Edit(props) {
 					 style={{
 						 borderRadius: parseRadius(blockRadius, true),
 						 padding: `${props.attributes.InnerTextPadding / 2}px ${props.attributes.InnerTextPadding}px`,
-						 backgroundColor: props.attributes.InnerTextBackground || "transparent",
+						 background: innerBlocksProps.style.background || innerBlocksProps.style.backgroundColor || "transparent",
 						 backdropFilter: `blur(${props.attributes.InnerTextBlur}px)`,
 					}}
 				>
-					<div {...innerBlocksProps} />
+					<div {...(function ({ style, ...others }) {
+						return others;
+					})(innerBlocksProps)} />
 				</div>
 
 
@@ -125,7 +126,7 @@ export default function Edit(props) {
 				<PanelBody title={__('Text', metadata.textdomain)}>
 					<RangeControl
 						min={10}
-						max={50}
+						max={200}
 						value={props.attributes.InnerTextPadding || 10}
 						onChange={(newValue) => {
 							props.setAttributes({InnerTextPadding: parseInt(newValue)});
@@ -144,18 +145,6 @@ export default function Edit(props) {
 						label={__('InnerText Blur Effect', metadata.textdomain)}
 						help={__("To make the filter work, don't forget to disable the background color", metadata.textdomain)}
 					/>
-					<HorizontalRule/>
-					<div>
-						<label className={'beeAddonsBlocks-base-control__label'}>{__('InnerText Background Color', metadata.textdomain)}</label>
-						<ColorPalette
-							value={props.attributes.InnerTextBackground}
-							onChange={(newValue) => {
-								props.setAttributes({
-									InnerTextBackground: newValue,
-								})
-							}}
-						/>
-					</div>
 				</PanelBody>
 			</InspectorControls>
 
