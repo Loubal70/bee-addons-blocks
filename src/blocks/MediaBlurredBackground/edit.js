@@ -16,8 +16,7 @@ import {
 	BlockControls,
 	useInnerBlocksProps,
 	InspectorControls,
-	MediaPlaceholder,
-	ColorPalette
+	MediaPlaceholder
 } from '@wordpress/block-editor';
 import {PanelBody, ToolbarGroup, ToolbarButton, RangeControl, HorizontalRule} from '@wordpress/components';
 import {Fragment} from "@wordpress/element";

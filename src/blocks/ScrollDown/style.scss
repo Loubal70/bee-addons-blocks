@@ -1,0 +1,22 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-bee-addons-blocks-scroll-down {
+	text-align: center;
+	color: #B5B5B5;
+	font-size: 1rem;
+	-webkit-animation: bounce 3s ease-in-out infinite;
+	animation: bounce 3s ease-in-out infinite;
+	-moz-animation: bounce 3s ease-in-out infinite;
+	cursor: pointer;
+
+	.bee-arrow{
+		width: 28px;
+		height: 14px;
+		margin: 0.8rem auto 0 auto;
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "bee-addons-blocks/scroll-down",
+  "version": "0.1.0",
+  "title": "Scroll Down",
+  "category": "beeAddonsBlocks",
+  "icon": "smiley",
+  "description": "Photo with text on blurred background.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "TranslateAnimation": {
+      "type": "number",
+      "default": 10
+    },
+    "scroll": {
+      "type": "number",
+      "default": 100
+    }
+  },
+  "textdomain": "beeAddonsBlocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

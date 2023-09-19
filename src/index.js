@@ -5,6 +5,7 @@ import {useState} from "@wordpress/element";
 import {Popover, PanelBody} from "@wordpress/components";
 import lowHightlightIcon from "./assets/low-highlight.svg";
 import lowHightlightActiveIcon from "./assets/low-highlight-active.svg";
+import SpacerBlockHook from "./utils/SpacerBlockHook";
 import "./style.scss";
 
 registerFormatType("bee-addons-blocks/low-highlight-format", {
@@ -66,3 +67,5 @@ registerFormatType("bee-addons-blocks/low-highlight-format", {
 		);
 	}
 });
+
+SpacerBlockHook.register();

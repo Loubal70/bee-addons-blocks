@@ -19,3 +19,9 @@
 		margin-right: 1rem;
 	}
 }
+
+@media screen and (max-width: 1024px) {
+	.wp-block-spacer {
+		height: var(--spacerMobileHeight, 1rem) !important; /* override inline height */
+	}
+}
