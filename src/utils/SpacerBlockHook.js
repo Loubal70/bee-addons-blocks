@@ -1,6 +1,9 @@
+import metadata from "../blocks/curvy/block.json";
+
 const {createHigherOrderComponent} = wp.compose
 const {InspectorControls} = wp.blockEditor
-const {BaseControl, PanelBody, __experimentalUnitControl} = wp.components
+const {BaseControl, PanelBody, __experimentalUnitControl, ToggleControl} = wp.components
+import { __ } from "@wordpress/i18n";
 const {Fragment} = wp.element
 
 export default class SpacerBlockHook {
@@ -20,7 +23,10 @@ export default class SpacerBlockHook {
 	addSpacerSettings(settings) {
 		if (settings.name !== 'core/spacer') return settings;
 		settings.supports = {...settings.supports, color: true};
-		settings.attributes = {...settings.attributes, mobileHeight: {type: 'string', default: '0'}};
+		settings.attributes = {...settings.attributes,
+			mobileHeight: {type: 'string', default: '0'},
+			showOnMobile: {type: 'boolean', default: false},
+		};
 		return settings;
 	}
 
@@ -36,16 +42,29 @@ export default class SpacerBlockHook {
 
 			return <Fragment>
 				<InspectorControls>
-					<PanelBody title={'Réglages Responsive'} initialOpen={false}>
-						<BaseControl label={'Hauteur'}>
-							<__experimentalUnitControl type={'number'}
-													   min={0}
-													   step={1}
-													   value={mobileHeight}
-													   style={{width: '80px'}}
-													   onChange={(value) => setAttributes({mobileHeight: value})}>
-							</__experimentalUnitControl>
-						</BaseControl>
+					<PanelBody title={__('Responsive Settings', 'beeAddonsBlocks')} initialOpen={false}>
+						<div style={{display: "flex"}}>
+							<ToggleControl
+								onChange={(isChecked) => {
+									props.setAttributes({
+										showOnMobile: isChecked,
+									});
+								}}
+								checked={props.attributes.showOnMobile}
+							/>
+							<span>{__("Enable spacer on mobile", 'beeAddonsBlocks')}</span>
+						</div>
+
+						{props.attributes.showOnMobile &&
+							<BaseControl label={__('Height', 'beeAddonsBlocks')}>
+								<__experimentalUnitControl type={'number'}
+														   min={0}
+														   step={1}
+														   value={mobileHeight || 80}
+														   onChange={(value) => setAttributes({mobileHeight: value})}>
+								</__experimentalUnitControl>
+							</BaseControl>
+						}
 					</PanelBody>
 				</InspectorControls>
 				<BlockEdit {...props} />
@@ -59,10 +78,15 @@ export default class SpacerBlockHook {
 
 	addSpacerProps(props, blockType, attributes) {
 		if (blockType.name !== 'core/spacer') return props;
-		const {mobileHeight} = attributes;
+		const {mobileHeight, showOnMobile} = attributes;
 		const heightNumber = +mobileHeight.match(/\d+/)[0];
-		if (mobileHeight && heightNumber > 0) {
-			props.style = {...props.style, "--spacerMobileHeight": mobileHeight};
+		const showValue = +showOnMobile ? 'block' : 'hidden';
+
+		props.style = {...props.style, "--spacerMobileShow": showValue};
+		if (showOnMobile === true && mobileHeight) {
+			if(heightNumber > 0){
+				props.style = {...props.style, "--spacerMobileHeight": mobileHeight};
+			}
 		}
 		return props;
 	}

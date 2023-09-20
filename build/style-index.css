@@ -24,6 +24,7 @@
 }
 @media screen and (max-width: 1024px) {
   .wp-block-spacer {
+    display: var(--spacerMobileShow, block) !important; /* override inline display */
     height: var(--spacerMobileHeight, 1rem) !important; /* override inline height */
   }
 }

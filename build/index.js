@@ -198,6 +198,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _blocks_curvy_block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/curvy/block.json */ "./src/blocks/curvy/block.json");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
 
 const {
   createHigherOrderComponent
@@ -208,13 +212,15 @@ const {
 const {
   BaseControl,
   PanelBody,
-  __experimentalUnitControl
+  __experimentalUnitControl,
+  ToggleControl
 } = wp.components;
+
 const {
   Fragment
 } = wp.element;
 class SpacerBlockHook {
-  namespace = 'orka/spacer';
+  namespace = 'beeAddonsBlock/spacer';
   static register() {
     const instance = new this();
     instance.registerSpacerSettings();
@@ -235,6 +241,10 @@ class SpacerBlockHook {
       mobileHeight: {
         type: 'string',
         default: '0'
+      },
+      showOnMobile: {
+        type: 'boolean',
+        default: false
       }
     };
     return settings;
@@ -255,18 +265,26 @@ class SpacerBlockHook {
         mobileHeight
       } = attributes;
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelBody, {
-        title: 'Réglages Responsive',
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Responsive Settings', 'beeAddonsBlocks'),
         initialOpen: false
-      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BaseControl, {
-        label: 'Hauteur'
+      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        style: {
+          display: "flex"
+        }
+      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ToggleControl, {
+        onChange: isChecked => {
+          props.setAttributes({
+            showOnMobile: isChecked
+          });
+        },
+        checked: props.attributes.showOnMobile
+      }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable spacer on mobile", 'beeAddonsBlocks'))), props.attributes.showOnMobile && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BaseControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Height', 'beeAddonsBlocks')
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(__experimentalUnitControl, {
         type: 'number',
         min: 0,
         step: 1,
-        value: mobileHeight,
-        style: {
-          width: '80px'
-        },
+        value: mobileHeight || 80,
         onChange: value => setAttributes({
           mobileHeight: value
         })
@@ -281,14 +299,22 @@ class SpacerBlockHook {
   addSpacerProps(props, blockType, attributes) {
     if (blockType.name !== 'core/spacer') return props;
     const {
-      mobileHeight
+      mobileHeight,
+      showOnMobile
     } = attributes;
     const heightNumber = +mobileHeight.match(/\d+/)[0];
-    if (mobileHeight && heightNumber > 0) {
-      props.style = {
-        ...props.style,
-        "--spacerMobileHeight": mobileHeight
-      };
+    const showValue = +showOnMobile ? 'block' : 'hidden';
+    props.style = {
+      ...props.style,
+      "--spacerMobileShow": showValue
+    };
+    if (showOnMobile === true && mobileHeight) {
+      if (heightNumber > 0) {
+        props.style = {
+          ...props.style,
+          "--spacerMobileHeight": mobileHeight
+        };
+      }
     }
     return props;
   }
@@ -365,6 +391,16 @@ module.exports = window["wp"]["i18n"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["richText"];
+
+/***/ }),
+
+/***/ "./src/blocks/curvy/block.json":
+/*!*************************************!*\
+  !*** ./src/blocks/curvy/block.json ***!
+  \*************************************/
+/***/ (function(module) {
+
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"bee-addons-blocks/curvy","version":"0.1.0","title":"Curvy","category":"beeAddonsBlocks","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting.","example":{"innerBlocks":[{"name":"core/heading","attributes":{"content":"Lorem ipsum dolor sit amet"}},{"name":"core/paragraph","attributes":{"content":"This is an example of curvy block"}}]},"supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"variations":[{"name":"topOnly","title":"Curvy - Top Only","attributes":{"enableTopCurve":true,"enableBottomCurve":false}},{"name":"bottomOnly","title":"Curvy - Bottom Only","attributes":{"enableTopCurve":false,"enableBottomCurve":true}}],"attributes":{"style":{"type":"object","default":{"color":{"background":"#fbde20"},"spacing":{"padding":{"top":"80px","right":"50px","bottom":"80px","left":"50px"}}}},"enableTopCurve":{"type":"boolean","default":false},"topCurveWidth":{"type":"number","default":100},"topCurveHeight":{"type":"number","default":100},"topCurveFlipX":{"type":"boolean","default":false},"topCurveFlipY":{"type":"boolean","default":false},"topCurveColor":{"type":"string","default":"#FFFFFF"},"enableBottomCurve":{"type":"boolean","default":false},"bottomCurveWidth":{"type":"number","default":100},"bottomCurveHeight":{"type":"number","default":100},"bottomCurveFlipX":{"type":"boolean","default":false},"bottomCurveFlipY":{"type":"boolean","default":false},"bottomCurveColor":{"type":"string","default":"#FFFFFF"}},"textdomain":"beeAddonsBlocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 
