@@ -99,7 +99,8 @@ function Edit(props) {
   } = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     style: {
       color: '#FFFFFF'
-    }
+    },
+    className: `are-vertically-aligned-${props.attributes.InnerTextPosition}`
   });
   const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
     template: [['core/heading', {
@@ -158,8 +159,16 @@ function Edit(props) {
       });
     },
     icon: "trash"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Remove image', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Remove image', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockVerticalAlignmentToolbar, {
+    value: props.attributes.InnerTextPosition,
+    allowedControls: ['top', 'center', 'bottom'],
+    onChange: newValue => {
+      props.setAttributes({
+        InnerTextPosition: newValue
+      });
+    }
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     min: 10,
     max: 200,
@@ -424,7 +433,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"bee-addons-blocks/media-blurred-background","version":"0.1.0","title":"Media Blurred Text","category":"beeAddonsBlocks","icon":"smiley","description":"Photo with text on blurred background.","supports":{"html":false,"align":true,"color":{"background":true,"gradients":true,"text":false},"__experimentalBorder":{"radius":true,"__experimentalDefaultControls":{"radius":true}}},"attributes":{"InnerTextPadding":{"type":"number","default":10},"InnerTextBlur":{"type":"number","default":10},"MediaUrl":{"type":"string","default":""},"MediaAlt":{"type":"string","default":""},"MediaId":{"type":"number","default":""}},"textdomain":"beeAddonsBlocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"bee-addons-blocks/media-blurred-background","version":"0.1.0","title":"Media Blurred Text","category":"beeAddonsBlocks","icon":"smiley","description":"Photo with text on blurred background.","supports":{"html":false,"align":true,"color":{"background":true,"gradients":true,"text":false},"__experimentalBorder":{"radius":true,"__experimentalDefaultControls":{"radius":true}}},"attributes":{"InnerTextPosition":{"type":"string","enum":["top","center","bottom"],"default":"bottom"},"InnerTextPadding":{"type":"number","default":10},"InnerTextBlur":{"type":"number","default":10},"MediaUrl":{"type":"string","default":""},"MediaAlt":{"type":"string","default":""},"MediaId":{"type":"number","default":""}},"textdomain":"beeAddonsBlocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

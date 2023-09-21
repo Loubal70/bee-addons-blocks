@@ -4,12 +4,11 @@ use BeeAddonsBlocks\BeeAddonsBlocks;
 
 $MediaBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0);
 $ContentBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0, true);
-$block_wrapper_attributes = get_block_wrapper_attributes();
-$mediaSize = (array_key_exists('align', $attributes) && in_array($attributes['align'], ['wide', 'full'])) ? 'full' : 'large';
-
-$test = wp_get_attachment_image($attributes['MediaId'], $mediaSize, '', [
-	'style' => "border-radius: $MediaBorderRadius;"
+$block_wrapper_attributes = get_block_wrapper_attributes([
+	'class' => 'are-vertically-aligned-'.$attributes['InnerTextPosition'],
 ]);
+
+$mediaSize = (array_key_exists('align', $attributes) && in_array($attributes['align'], ['wide', 'full'])) ? 'full' : 'large';
 
 $contentBackgroundColor = array_key_exists('backgroundColor', $attributes) ? sprintf('var(--wp--preset--color--%s)', $attributes['backgroundColor']) :
 		(!empty($attributes['style']['color']) ? array_values($attributes['style']['color'])[0] : 'transparent');

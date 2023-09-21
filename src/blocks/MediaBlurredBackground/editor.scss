@@ -43,5 +43,17 @@
 	.innerText .wp-block-columns{
 		margin-bottom: 0;
 	}
+
+	&.are-vertically-aligned{
+		&-top .innerText{
+			top: 0;
+			bottom: auto;
+		}
+		&-center .innerText{
+			top: 50%;
+			bottom: auto;
+			transform: translateY(-50%);
+		}
+	}
 }
 

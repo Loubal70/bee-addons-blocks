@@ -23,6 +23,11 @@
 		}
 	},
 	"attributes": {
+		"InnerTextPosition": {
+			"type": "string",
+			"enum": ["top", "center", "bottom"],
+			"default": "bottom"
+		},
 		"InnerTextPadding": {
 			"type": "number",
 			"default": 10

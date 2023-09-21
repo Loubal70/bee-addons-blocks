@@ -15,10 +15,11 @@ import {
 	useBlockProps,
 	BlockControls,
 	useInnerBlocksProps,
+	BlockVerticalAlignmentToolbar,
 	InspectorControls,
 	MediaPlaceholder
 } from '@wordpress/block-editor';
-import {PanelBody, ToolbarGroup, ToolbarButton, RangeControl, HorizontalRule} from '@wordpress/components';
+import {PanelBody, ToolbarGroup, ToolbarButton, SelectControl, RangeControl, HorizontalRule} from '@wordpress/components';
 import {Fragment} from "@wordpress/element";
 
 /**
@@ -42,9 +43,8 @@ import {parseRadius} from "../../utils/parseValue";
 
 export default function Edit(props) {
 	const {className, ...blockProps} = useBlockProps({
-		style: {
-			color: '#FFFFFF'
-		}
+		style: { color: '#FFFFFF' },
+		className: `are-vertically-aligned-${ props.attributes.InnerTextPosition }`
 	});
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
 		template: [
@@ -118,11 +118,40 @@ export default function Edit(props) {
 						</ToolbarGroup>
 
 					}
+					<BlockVerticalAlignmentToolbar
+						value={ props.attributes.InnerTextPosition }
+						allowedControls={['top', 'center', 'bottom']}
+						onChange={(newValue) => {
+							props.setAttributes({
+								InnerTextPosition: newValue,
+							})
+						}}
+					/>
 				</BlockControls>
 			</Fragment>
 
 			<InspectorControls>
-				<PanelBody title={__('Text', metadata.textdomain)}>
+				<PanelBody title={__('Content', metadata.textdomain)}>
+					{/*<SelectControl*/}
+					{/*	label={__("Position", metadata.textdomain)}*/}
+					{/*	value={props.attributes.linkedPost}*/}
+					{/*	onChange={(newValue) => {*/}
+					{/*		props.setAttributes({*/}
+					{/*			linkedPost: newValue ? parseInt(newValue) : null,*/}
+					{/*		});*/}
+					{/*	}}*/}
+					{/*	options={[*/}
+					{/*		{*/}
+					{/*			label: __("Select a", metadata.textdomain) + ' ' + `${props.attributes.postType}` + ' ' + __("to link to", metadata.textdomain),*/}
+					{/*			value: ''*/}
+					{/*		}, ...(posts || []).map(post => (*/}
+					{/*			{*/}
+					{/*				label: post.title.rendered,*/}
+					{/*				value: post.id*/}
+					{/*			}*/}
+					{/*		))*/}
+					{/*	]}*/}
+					{/*/>*/}
 					<RangeControl
 						min={10}
 						max={200}

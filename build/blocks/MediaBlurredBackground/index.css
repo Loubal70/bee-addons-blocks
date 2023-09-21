@@ -38,5 +38,14 @@
 .wp-block-bee-addons-blocks-media-blurred-background .innerText .wp-block-columns {
   margin-bottom: 0;
 }
+.wp-block-bee-addons-blocks-media-blurred-background.are-vertically-aligned-top .innerText {
+  top: 0;
+  bottom: auto;
+}
+.wp-block-bee-addons-blocks-media-blurred-background.are-vertically-aligned-center .innerText {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
 
 /*# sourceMappingURL=index.css.map*/
