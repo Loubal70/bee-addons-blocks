@@ -18,6 +18,7 @@
 
 	img{
 		display: block;
+		min-height: 50px;
 		height: 100%;
 
 		+ .innerText{

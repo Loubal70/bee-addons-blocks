@@ -15,7 +15,7 @@ $contentBackgroundColor = array_key_exists('backgroundColor', $attributes) ? spr
 ?>
 
 <div <?php echo $block_wrapper_attributes; ?>>
-	<?php if (!empty($attributes['MediaId'])): ?>
+	<?php if (!empty($attributes['MediaUrl'])): ?>
 		<div class="media-wrapper">
 			<?php echo wp_get_attachment_image($attributes['MediaId'], $mediaSize, '', [
 				'style' => "border-radius: $MediaBorderRadius;"
