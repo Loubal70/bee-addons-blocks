@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Bee Addons Blocks
  * Description:       Plugin who add new fantastics gutenberg blocks
- * Requires at least: 6.1
+ * Requires at least: 6.0
  * Requires PHP:      7.0
  * Version:           0.1.1
  * Author:            Loubal70
