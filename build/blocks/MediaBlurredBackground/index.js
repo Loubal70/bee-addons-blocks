@@ -56,6 +56,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/MediaBlurredBackground/editor.scss");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/MediaBlurredBackground/block.json");
 /* harmony import */ var _utils_parseValue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/parseValue */ "./src/utils/parseValue.js");
+/* harmony import */ var _utils_MimeType__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/MimeType */ "./src/utils/MimeType.js");
 
 /**
  * Retrieves the translation of text.
@@ -92,6 +93,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
 function Edit(props) {
   const {
     className,
@@ -112,17 +114,25 @@ function Edit(props) {
     allowedBlocks: ['core/group', 'core/heading, core/paragraph', 'core/list', 'core/button', 'core/columns']
   });
   const blockRadius = props.attributes.style?.border?.radius || 0;
+  const mimeType = (0,_utils_MimeType__WEBPACK_IMPORTED_MODULE_7__.getMimeType)(props.attributes.MediaUrl);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: `${className}`,
     ...blockProps
-  }, !!props.attributes.MediaUrl ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    loading: 'lazy',
+  }, !!props.attributes.MediaUrl ? mimeType.startsWith('image/') ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    loading: "lazy",
     src: props.attributes.MediaUrl,
     alt: props.attributes.MediaAlt,
     style: {
       borderRadius: (0,_utils_parseValue__WEBPACK_IMPORTED_MODULE_6__.parseRadius)(blockRadius)
     }
-  }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
+  }) : mimeType.startsWith('video/') ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+    src: props.attributes.MediaUrl,
+    alt: props.attributes.MediaAlt,
+    style: {
+      borderRadius: (0,_utils_parseValue__WEBPACK_IMPORTED_MODULE_6__.parseRadius)(blockRadius),
+      backgroundColor: "gray"
+    }
+  }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Unsupported file format', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
     onSelect: media => {
       props.setAttributes({
         MediaId: media.id,
@@ -130,7 +140,6 @@ function Edit(props) {
         MediaAlt: media.alt
       });
     },
-    allowedTypes: ['image'],
     multiple: false,
     labels: {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add your picture', _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
@@ -303,6 +312,32 @@ function save() {
   } = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useInnerBlocksProps.save(blockProps);
   return children;
 }
+
+/***/ }),
+
+/***/ "./src/utils/MimeType.js":
+/*!*******************************!*\
+  !*** ./src/utils/MimeType.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getMimeType: function() { return /* binding */ getMimeType; }
+/* harmony export */ });
+const getMimeType = url => {
+  const extension = url.split('.').pop().toLowerCase();
+  const mimeTypes = {
+    jpg: 'image/jpeg',
+    jpeg: 'image/jpeg',
+    png: 'image/png',
+    gif: 'image/gif',
+    webp: 'image/webp',
+    mp4: 'video/mp4',
+    webm: 'video/webm'
+  };
+  return mimeTypes[extension] || '';
+};
 
 /***/ }),
 

@@ -10,7 +10,8 @@
 .wp-block-bee-addons-blocks-media-blurred-background {
   position: relative;
 }
-.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper img {
+.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper img,
+.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper video {
   display: block;
   width: 100%;
   max-width: 100%;

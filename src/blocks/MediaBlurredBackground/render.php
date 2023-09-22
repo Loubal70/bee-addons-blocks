@@ -4,6 +4,9 @@ use BeeAddonsBlocks\BeeAddonsBlocks;
 
 $MediaBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0);
 $ContentBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0, true);
+$MimeType = BeeAddonsBlocks::getMimeType($attributes['MediaUrl']);
+
+
 $block_wrapper_attributes = get_block_wrapper_attributes([
 	'class' => 'are-vertically-aligned-'.$attributes['InnerTextPosition'],
 ]);
@@ -17,9 +20,17 @@ $contentBackgroundColor = array_key_exists('backgroundColor', $attributes) ? spr
 <div <?php echo $block_wrapper_attributes; ?>>
 	<?php if (!empty($attributes['MediaUrl'])): ?>
 		<div class="media-wrapper">
-			<?php echo wp_get_attachment_image($attributes['MediaId'], $mediaSize, '', [
-				'style' => "border-radius: $MediaBorderRadius;"
-			]) ?>
+			<?php
+				if(strpos($MimeType, 'image/') === 0){
+					echo wp_get_attachment_image($attributes['MediaId'], $mediaSize, '', [
+						'style' => "border-radius: $MediaBorderRadius;"
+					]);
+				} elseif (strpos($MimeType, 'video/') === 0) {
+					echo '<video autoplay muted loop src="' . esc_url($attributes['MediaUrl']) . '" alt="' . esc_attr($attributes['MediaAlt']) . '"
+					style="border-radius: ' . $MediaBorderRadius. ';" />';
+				}
+
+			?>
 		</div>
 	<?php endif; ?>
 

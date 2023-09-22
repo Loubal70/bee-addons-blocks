@@ -40,12 +40,14 @@ import './editor.scss';
  */
 import metadata from './block.json';
 import {parseRadius} from "../../utils/parseValue";
+import {getMimeType} from "../../utils/MimeType";
 
 export default function Edit(props) {
 	const {className, ...blockProps} = useBlockProps({
 		style: { color: '#FFFFFF' },
 		className: `are-vertically-aligned-${ props.attributes.InnerTextPosition }`
 	});
+
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
 		template: [
 			[ 'core/heading', { level: 2, placeholder: __('Title', metadata.textdomain)} ],
@@ -53,34 +55,46 @@ export default function Edit(props) {
 		],
 		allowedBlocks: ['core/group', 'core/heading, core/paragraph', 'core/list', 'core/button', 'core/columns'],
 	});
+
 	const blockRadius = props.attributes.style?.border?.radius || 0;
+
+	const mimeType = getMimeType(props.attributes.MediaUrl);
+
 	return (
 		<>
 			{/* Don't forget to add others classes in render.php in get_block_wrapper_attributes function */}
 			<section className={`${className}`} {...blockProps}>
-				{!!props.attributes.MediaUrl ?
-					(<img
-						loading={'lazy'}
-						src={props.attributes.MediaUrl}
-						alt={props.attributes.MediaAlt}
-						style={{ borderRadius: parseRadius(blockRadius) }}
-					/>)
-					:
+
+				{!!props.attributes.MediaUrl ? (
+					mimeType.startsWith('image/') ? (
+						<img
+							loading="lazy"
+							src={props.attributes.MediaUrl}
+							alt={props.attributes.MediaAlt}
+							style={{ borderRadius: parseRadius(blockRadius) }}
+						/>
+					) : mimeType.startsWith('video/') ? (
+						<video
+							src={props.attributes.MediaUrl}
+							alt={props.attributes.MediaAlt}
+							style={{ borderRadius: parseRadius(blockRadius), backgroundColor: "gray" }}
+						/>
+					) : (
+						<p>{__('Unsupported file format', metadata.textdomain)}</p>
+					)
+				) : (
 					<MediaPlaceholder
-						onSelect={
-							(media) => {
-								props.setAttributes({
-									MediaId: media.id,
-									MediaUrl: media.url,
-									MediaAlt: media.alt,
-								});
-							}
-						}
-						allowedTypes={['image']}
+						onSelect={(media) => {
+							props.setAttributes({
+								MediaId: media.id,
+								MediaUrl: media.url,
+								MediaAlt: media.alt,
+							});
+						}}
 						multiple={false}
-						labels={{title: __('Add your picture', metadata.textdomain)}}
+						labels={{ title: __('Add your picture', metadata.textdomain) }}
 					/>
-				}
+				)}
 
 				<div className={'innerText'}
 					 style={{
@@ -132,26 +146,6 @@ export default function Edit(props) {
 
 			<InspectorControls>
 				<PanelBody title={__('Content', metadata.textdomain)}>
-					{/*<SelectControl*/}
-					{/*	label={__("Position", metadata.textdomain)}*/}
-					{/*	value={props.attributes.linkedPost}*/}
-					{/*	onChange={(newValue) => {*/}
-					{/*		props.setAttributes({*/}
-					{/*			linkedPost: newValue ? parseInt(newValue) : null,*/}
-					{/*		});*/}
-					{/*	}}*/}
-					{/*	options={[*/}
-					{/*		{*/}
-					{/*			label: __("Select a", metadata.textdomain) + ' ' + `${props.attributes.postType}` + ' ' + __("to link to", metadata.textdomain),*/}
-					{/*			value: ''*/}
-					{/*		}, ...(posts || []).map(post => (*/}
-					{/*			{*/}
-					{/*				label: post.title.rendered,*/}
-					{/*				value: post.id*/}
-					{/*			}*/}
-					{/*		))*/}
-					{/*	]}*/}
-					{/*/>*/}
 					<RangeControl
 						min={10}
 						max={200}

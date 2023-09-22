@@ -81,12 +81,28 @@ final class BeeAddonsBlocks
 	public static function parseRadius($value, $onlyBottom = false): ?string
 	{
 		if ($onlyBottom === true) {
-			$value = is_array($value) ? '0 0 '. $value['bottomRight'] . ' ' . $value['bottomLeft'] : "0 0 $value $value";
+			$value = is_array($value) ? '0 0 ' . $value['bottomRight'] . ' ' . $value['bottomLeft'] : "0 0 $value $value";
 		} else {
 			$value = is_array($value) ? "{$value['topLeft']} {$value['topRight']} {$value['bottomRight']} {$value['bottomLeft']}" : $value;
 		}
 
 		return esc_attr($value);
+	}
+
+	public static function getMimeType($url): string
+	{
+		$extension = strtolower(pathinfo($url, PATHINFO_EXTENSION));
+		$mimeTypes = [
+			'jpg' => 'image/jpeg',
+			'jpeg' => 'image/jpeg',
+			'png' => 'image/png',
+			'gif' => 'image/gif',
+			'webp' => 'image/webp',
+			'mp4' => 'video/mp4',
+			'webm' => 'video/webm',
+		];
+
+		return $mimeTypes[$extension] ?? '';
 	}
 }
 

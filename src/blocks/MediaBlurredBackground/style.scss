@@ -8,7 +8,8 @@
 .wp-block-bee-addons-blocks-media-blurred-background {
 	position: relative;
 
-	.media-wrapper img {
+	.media-wrapper img,
+	.media-wrapper video {
 		display: block;
 		width: 100%;
 		max-width: 100%;
