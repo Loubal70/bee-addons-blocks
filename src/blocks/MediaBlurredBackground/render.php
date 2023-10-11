@@ -26,7 +26,7 @@ $contentBackgroundColor = array_key_exists('backgroundColor', $attributes) ? spr
 						'style' => "border-radius: $MediaBorderRadius;"
 					]);
 				} elseif (strpos($MimeType, 'video/') === 0) {
-					echo '<video autoplay muted loop src="' . esc_url($attributes['MediaUrl']) . '" alt="' . esc_attr($attributes['MediaAlt']) . '"
+					echo '<video playsinline autoplay muted loop src="' . esc_url($attributes['MediaUrl']) . '" alt="' . esc_attr($attributes['MediaAlt']) . '"
 					style="border-radius: ' . $MediaBorderRadius. ';" />';
 				}
 
