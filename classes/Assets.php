@@ -6,11 +6,11 @@ class Assets extends BootLoadClass
 {
 	public function register(): void
 	{
-		add_action('init', [$this, 'enqueueScripts']);
+		add_action('admin_enqueue_scripts', [$this, 'enqueueAdminScripts']);
 		add_action('enqueue_block_assets', [$this, 'enqueueBlockAssets']);
 	}
 
-	public function enqueueScripts(): void
+	public function enqueueAdminScripts(): void
 	{
 		if (!defined('BEE_ADDONS_BLOCKS_URL')) return;
 		wp_enqueue_script('bee-addons-blocks-index', BEE_ADDONS_BLOCKS_URL . '/build/index.js', [
