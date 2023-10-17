@@ -4,7 +4,7 @@
  * Description:       Plugin who add new fantastics gutenberg blocks
  * Requires at least: 6.0
  * Requires PHP:      7.0
- * Version:           0.1.2
+ * Version:           0.1.3
  * Author:            Loubal70
  * Author URI:        https://louis-boulanger.fr/
  * License:           GPL-2.0-or-later
