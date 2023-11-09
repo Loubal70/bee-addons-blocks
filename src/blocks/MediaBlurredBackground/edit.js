@@ -17,9 +17,10 @@ import {
 	useInnerBlocksProps,
 	BlockVerticalAlignmentToolbar,
 	InspectorControls,
-	MediaPlaceholder
+	MediaPlaceholder,
+	URLInputButton
 } from '@wordpress/block-editor';
-import {PanelBody, ToolbarGroup, ToolbarButton, SelectControl, RangeControl, HorizontalRule} from '@wordpress/components';
+import {PanelBody, ToolbarGroup, ToolbarButton, RangeControl, HorizontalRule} from '@wordpress/components';
 import {Fragment} from "@wordpress/element";
 
 /**
@@ -114,24 +115,32 @@ export default function Edit(props) {
 
 			<Fragment>
 				<BlockControls>
-					{!!props.attributes.MediaUrl &&
-
-						<ToolbarGroup>
-							<ToolbarButton
-								onClick={() => {
-									props.setAttributes({
-										MediaId: '',
-										MediaUrl: '',
-										MediaAlt: '',
-									});
-								}}
-								icon="trash"
-							>
-								{__('Remove image', metadata.textdomain)}
-							</ToolbarButton>
-						</ToolbarGroup>
-
-					}
+					{!!props.attributes.MediaUrl && (
+						<Fragment>
+							<ToolbarGroup>
+								<URLInputButton
+									url={props.attributes.LinkUrl || ''}
+									onChange={(newValue) => {
+										props.setAttributes({ LinkUrl: newValue });
+									}}
+								/>
+							</ToolbarGroup>
+							<ToolbarGroup>
+								<ToolbarButton
+									onClick={() => {
+										props.setAttributes({
+											MediaId: '',
+											MediaUrl: '',
+											MediaAlt: '',
+										});
+									}}
+									icon="trash"
+								>
+									{__('Remove image', metadata.textdomain)}
+								</ToolbarButton>
+							</ToolbarGroup>
+						</Fragment>
+					)}
 					<BlockVerticalAlignmentToolbar
 						value={ props.attributes.InnerTextPosition }
 						allowedControls={['top', 'center', 'bottom']}

@@ -3,15 +3,15 @@
  * Plugin Name:       Bee Addons Blocks
  * Description:       Plugin who add new fantastics gutenberg blocks
  * Requires at least: 6.0
- * Requires PHP:      7.0
- * Version:           0.1.3
+ * Requires PHP:      7.4
+ * Version:           0.1.4
  * Author:            Loubal70
  * Author URI:        https://louis-boulanger.fr/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       beeAddonsBlocks
  *
- * @package           create-block
+ * @package           bee-addons-blocks
  */
 
 /**
@@ -57,7 +57,7 @@ final class BeeAddonsBlocks
 	 * @param string $value The variable such as var:preset|color|vivid-green-cyan to convert.
 	 * @return string The converted variable.
 	 */
-	public static function convert_custom_properties($value)
+	public static function convert_custom_properties(string $value): string
 	{
 		$prefix = "var:";
 		$prefix_len = strlen($prefix);

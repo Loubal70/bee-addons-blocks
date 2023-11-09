@@ -47,6 +47,9 @@
     }
   },
   "attributes": {
+    "LinkUrl": {
+      "type": "string"
+    },
     "InnerTextPosition": {
       "type": "string",
       "enum": [
