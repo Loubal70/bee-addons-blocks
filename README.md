@@ -10,6 +10,14 @@ about previous versions.
 ## Changelog
 
 <details>
+<summary><strong>v0.1.4</strong></summary>
+<ul>
+	<li>Upgrade packages to improve security</li>
+	<li>Add the possibility of putting a link on the block MediaBlurredBackground.</li>
+</ul>
+</details>
+
+<details>
 <summary><strong>v0.1.3</strong></summary>
 <ul>
 	<li>Optimizing asset loading</li>
