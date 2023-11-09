@@ -1,12 +1,21 @@
 === Bee Addons Blocks ===
+
 Contributors: 
+
 Donate link: 
+
 Tags: Gutenberg, Bee Addons Block
+
 Requires at least: 6.3
+
 Tested up to: 6.3.2
+
 Stable tag: trunk
+
 Requires PHP: 7.4
+
 License: GPLv2 or later
+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
