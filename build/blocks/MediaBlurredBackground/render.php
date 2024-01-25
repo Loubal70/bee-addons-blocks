@@ -6,7 +6,6 @@ $MediaBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']
 $ContentBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0, true);
 $MimeType = BeeAddonsBlocks::getMimeType($attributes['MediaUrl']);
 
-
 $block_wrapper_attributes = get_block_wrapper_attributes([
 	'class' => 'are-vertically-aligned-' . $attributes['InnerTextPosition'],
 ]);
@@ -23,7 +22,7 @@ $contentBackgroundColor = array_key_exists('backgroundColor', $attributes) ? spr
 	<?php endif; ?>
 
 	<?php if (!empty($attributes['MediaUrl'])): ?>
-		<div class="media-wrapper">
+		<div class="media-wrapper <?= !empty($attributes['hideOnMobile']) ? 'has-hideOnMobile' : '' ?>">
 			<?php
 			if (strpos($MimeType, 'image/') === 0) {
 				echo wp_get_attachment_image($attributes['MediaId'], $mediaSize, '', [

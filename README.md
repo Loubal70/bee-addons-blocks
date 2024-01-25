@@ -10,6 +10,16 @@ about previous versions.
 ## Changelog
 
 <details>
+<summary><strong>v0.1.5</strong></summary>
+<ul>
+	<li>Add support hideOnMobile props if exist in BO (soon...)</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>v0.1.0 - v0.1.4</strong></summary>
+<ul>
+<details>
 <summary><strong>v0.1.4</strong></summary>
 <ul>
 	<li>Upgrade packages to improve security</li>
@@ -57,5 +67,8 @@ about previous versions.
 <details>
 <summary><strong>v0.1.0</strong></summary>
 <p>- Add Curvy Block (beta)</p>
+</details>
+</ul>
+
 </details>
 
