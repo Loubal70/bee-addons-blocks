@@ -2,64 +2,31 @@
 
 namespace BeeAddonsBlocks;
 
-class Config extends BootLoadClass
+class Translations extends BootLoadClass
 {
-	/**
-	 * Parses a border radius value and returns it as a string with optional customization.
-	 *
-	 * @return string|null Returns the parsed border radius value as a string, or null if the input is invalid.
-	 */
-	public static function parseRadius($value, $onlyBottom = false): ?string
+	public function register(): void
 	{
-		if ($onlyBottom === true) {
-			$value = is_array($value) ? '0 0 '.$value['bottomRight'].' '.$value['bottomLeft'] : "0 0 $value $value";
-		} else {
-			$value = is_array($value) ? "{$value['topLeft']} {$value['topRight']} {$value['bottomRight']} {$value['bottomLeft']}" : $value;
-		}
-
-		return esc_attr($value);
+		add_action('admin_enqueue_scripts', [$this, 'loadScriptTranslations'], 20);
+		add_action('plugins_loaded', [$this, 'loadPluginTranslations']);
 	}
 
-	public static function getMimeType($url): string
+	public function loadScriptTranslations(): void
 	{
-		$extension = strtolower(pathinfo($url, PATHINFO_EXTENSION));
-		$mimeTypes = [
-			'jpg' => 'image/jpeg',
-			'jpeg' => 'image/jpeg',
-			'png' => 'image/png',
-			'gif' => 'image/gif',
-			'webp' => 'image/webp',
-			'mp4' => 'video/mp4',
-			'webm' => 'video/webm',
-		];
-
-		return $mimeTypes[$extension] ?? '';
+		if (!defined('BEE_ADDONS_BLOCKS_DIR')) return;
+		wp_set_script_translations(
+			'bee-addons-blocks-admin-script',
+			BEE_ADDONS_BLOCKS_TEXT_DOMAIN,
+			BEE_ADDONS_BLOCKS_DIR . 'languages'
+		);
 	}
 
-	/**
-	 * This is used to convert the internal representation of variables to the CSS representation.
-	 * For example, `var:preset|color|vivid-green-cyan` becomes `var(--wp--preset--color--vivid-green-cyan)`.
-	 *
-	 * From : WP Core
-	 *
-	 * @param  string  $value  The variable such as var:preset|color|vivid-green-cyan to convert.
-	 * @return string The converted variable.
-	 */
-	public static function convert_custom_properties(string $value): string
+	public function loadPluginTranslations(): void
 	{
-		$prefix = 'var:';
-		$prefix_len = strlen($prefix);
-		$token_in = '|';
-		$token_out = '--';
-		if (str_starts_with($value, $prefix)) {
-			$unwrapped_name = str_replace(
-				$token_in,
-				$token_out,
-				substr($value, $prefix_len)
-			);
-			$value = "var(--wp--$unwrapped_name)";
-		}
-
-		return $value;
+		if (!defined('BEE_ADDONS_BLOCKS_DIR')) return;
+		load_plugin_textdomain(
+			BEE_ADDONS_BLOCKS_TEXT_DOMAIN,
+			false,
+			BEE_ADDONS_BLOCKS_DIR . 'languages'
+		);
 	}
 }

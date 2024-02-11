@@ -11,7 +11,7 @@ import SpacerBlockHook from "./utils/hooks/SpacerBlockHook";
 import "./style.scss";
 
 registerFormatType("bee-addons-blocks/low-highlight-format", {
-	title: __("Low Highlight", "beeAddonsBlocks"),
+	title: __("Low Highlight", "bee-addons-blocks"),
 	tagName: "span",
 	className: "beeAddonsBlocks-low-highlight",
 	edit: ({onChange, value, contentRef, isActive}) => {
@@ -32,7 +32,7 @@ registerFormatType("bee-addons-blocks/low-highlight-format", {
 						src={isActive ? lowHightlightActiveIcon : lowHightlightIcon}
 					/>
 				}
-				title={__("Low Highlight", "beeAddonsBlocks")}
+				title={__("Low Highlight", "bee-addons-blocks")}
 				onClick={() => {
 					setShowColors(true);
 				}}
@@ -42,7 +42,7 @@ registerFormatType("bee-addons-blocks/low-highlight-format", {
 					anchor={contentRef?.current}
 					onClose={() => setShowColors(false)}
 				>
-					<PanelBody title={__("Low Highlight", "beeAddonsBlocks")}>
+					<PanelBody title={__("Low Highlight", "bee-addons-blocks")}>
 						<ColorPalette
 							value={attributes?.['data-color']}
 							onChange={(newValue) => {

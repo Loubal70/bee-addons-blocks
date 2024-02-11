@@ -1,24 +1,32 @@
-# Bee Addons Blocks 🐝 [![plugin version](https://img.shields.io/badge/version-v0.1.5-color.svg)](https://github.com/Loubal70/bee-addons-blocks/releases/latest)
+# Bee Addons Blocks 🐝 [![plugin version](https://img.shields.io/badge/version-v0.1.6-color.svg)](https://github.com/Loubal70/bee-addons-blocks/releases/latest)
 
 The Bee-Addons-Blocks plugin adds new types of Gutenberg blocks to enhance the appearance of your WordPress pages.
 
 ## Versions
 
-The current version of Bee Addons Blocks is `v0.1.5`. Please refer to the [Changelog](#changelog) section for details
+The current version of Bee Addons Blocks is `v0.1.6`. Please refer to the [Changelog](#changelog) section for details
 about previous versions.
 
 ## Changelog
 
+<details>
+<summary><strong>v0.1.6</strong></summary>
+<ul>
+	<li>Add the admin menu</li>
+	<li>Adding the ability to disable blocks in order to optimize loading times
+</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>v0.1.0 - v0.1.5</strong></summary>
+<ul>
 <details>
 <summary><strong>v0.1.5</strong></summary>
 <ul>
 	<li>Add support hideOnMobile props if exist in BO (soon...)</li>
 </ul>
 </details>
-
-<details>
-<summary><strong>v0.1.0 - v0.1.4</strong></summary>
-<ul>
 <details>
 <summary><strong>v0.1.4</strong></summary>
 <ul>

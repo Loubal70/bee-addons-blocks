@@ -6,15 +6,24 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
+		"dev": "TAILWIND_MODE=watch npx mix watch & npm run start",
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"i18n-pot": "php wp-cli.phar i18n make-pot . languages/bee-addons-blocks.pot --slug=bee-addons-blocks --domain=bee-addons-blocks --exclude=node_modules",
+		"i18n-json": "php wp-cli.phar i18n make-json languages/ --no-purge"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.11.0"
+		"@wordpress/scripts": "^26.11.0",
+		"laravel-mix": "^6.0.49",
+		"resolve-url-loader": "^5.0.0",
+		"tailwindcss": "^3.3.3"
+	},
+	"dependencies": {
+		"alpinejs": "^3.13.5"
 	}
 }

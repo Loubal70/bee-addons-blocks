@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bee-addons-"
+"blocks\n"
+"POT-Creation-Date: 2024-02-05T21:21:05+00:00\n"
+"PO-Revision-Date: 2024-02-05 22:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: .\n"
+
+#. Plugin Name of the plugin
+msgid "Bee Addons Blocks"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Discover BeeAddonsBlock, the plugin that brings new features and "
+"enhancements to the WordPress Gutenberg editor. Simplify the creation of "
+"custom blocks with advanced options and a user-friendly interface. Bring "
+"your ideas to life and easily create unique designs with our enhanced "
+"Gutenberg plugin."
+msgstr ""
+"Découvrez BeeAddonsBlock, le plugin qui apporte de nouvelles "
+"fonctionnalités et améliorations à l’éditeur WordPress Gutenberg. "
+"Simplifiez la création de blocs personnalisés avec des options avancées "
+"et une interface conviviale. Donnez vie à vos idées et créez facilement "
+"des designs uniques avec notre plugin Gutenberg amélioré."
+
+#. Author of the plugin
+msgid "Louis Boulanger"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://louis-boulanger.fr/"
+msgstr ""
+
+#: src/index.js:14 src/index.js:35 src/index.js:45
+msgid "Low Highlight"
+msgstr ""
+
+#: src/utils/hooks/SpacerBlockHook.jsx:54
+msgid "Responsive Settings"
+msgstr ""
+
+#: src/utils/hooks/SpacerBlockHook.jsx:59
+msgid "Enable spacer on mobile"
+msgstr "Activer l’espacement en mobile"
+
+#: src/utils/hooks/SpacerBlockHook.jsx:68
+msgid "Height"
+msgstr ""
+
+#: src/blocks/clickyButton/block.json
+msgctxt "block title"
+msgid "Clicky button"
+msgstr ""
+
+#: src/blocks/clickyButton/block.json
+msgctxt "block description"
+msgid ""
+"A call to action  that link to a post or page rather than harcording the "
+"destination url."
+msgstr ""
+
+#: src/blocks/clickyGroup/block.json
+msgctxt "block title"
+msgid "Clicky Group"
+msgstr ""
+
+#: src/blocks/clickyGroup/block.json
+msgctxt "block description"
+msgid "A group of Clicky buttons that link to a page."
+msgstr ""
+
+#: src/blocks/curvy/block.json
+msgctxt "block title"
+msgid "Curvy"
+msgstr ""
+
+#: src/blocks/curvy/block.json
+msgctxt "block description"
+msgid "Curvy shape dividers to make dividing page content more interesting."
+msgstr ""
+
+#: src/blocks/curvy/block.json
+msgctxt "block variation title"
+msgid "Curvy - Top Only"
+msgstr ""
+
+#: src/blocks/curvy/block.json
+msgctxt "block variation title"
+msgid "Curvy - Bottom Only"
+msgstr ""
+
+#: src/blocks/MediaBlurredBackground/block.json
+msgctxt "block title"
+msgid "Media Blurred Text"
+msgstr ""
+
+#: src/blocks/MediaBlurredBackground/block.json
+msgctxt "block description"
+msgid "Picture with text on blurred background."
+msgstr ""
+
+#: src/blocks/ScrollDown/block.json
+msgctxt "block title"
+msgid "Scroll Down"
+msgstr ""
+
+#: src/blocks/ScrollDown/block.json
+msgctxt "block description"
+msgid "Photo with text on blurred background."
+msgstr ""

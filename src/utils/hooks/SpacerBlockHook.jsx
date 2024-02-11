@@ -51,12 +51,12 @@ export default class SpacerBlockHook {
 				<Fragment>
 					<InspectorControls>
 						<PanelBody
-							title={__("Responsive Settings", "beeAddonsBlocks")}
+							title={__("Responsive Settings", "bee-addons-blocks")}
 							initialOpen={false}
 						>
 							<div style={{display: "flex"}}>
 								<ToggleControl
-									label={__("Enable spacer on mobile", "beeAddonsBlocks")}
+									label={__("Enable spacer on mobile", "bee-addons-blocks")}
 									checked={attributes.showOnMobile}
 									onChange={(isChecked) =>
 										setAttributes({showOnMobile: isChecked})
@@ -65,7 +65,7 @@ export default class SpacerBlockHook {
 							</div>
 
 							{attributes.showOnMobile && (
-								<BaseControl label={__("Height", "beeAddonsBlocks")}>
+								<BaseControl label={__("Height", "bee-addons-blocks")}>
 									<input
 										type="number"
 										min="0"

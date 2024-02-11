@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Alpine JS */
+[x-cloak]{
+	display: none !important;
+}
+
+#wpcontent{
+	@apply pl-0;
+}
