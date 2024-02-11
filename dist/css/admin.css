@@ -133,11 +133,18 @@
   margin-left: auto;
   margin-right: auto;
 }
+#bee-addons-blocks-wrapper :is(.my-0) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 #bee-addons-blocks-wrapper :is(.mt-1) {
   margin-top: 0.25rem;
 }
 #bee-addons-blocks-wrapper :is(.mt-0) {
   margin-top: 0px;
+}
+#bee-addons-blocks-wrapper :is(.mt-4) {
+  margin-top: 1rem;
 }
 #bee-addons-blocks-wrapper :is(.block) {
   display: block;
@@ -187,6 +194,9 @@
 #bee-addons-blocks-wrapper :is(.w-px) {
   width: 1px;
 }
+#bee-addons-blocks-wrapper :is(.w-56) {
+  width: 14rem;
+}
 #bee-addons-blocks-wrapper :is(.max-w-2xl) {
   max-width: 42rem;
 }
@@ -211,6 +221,21 @@
 #bee-addons-blocks-wrapper :is(.grow) {
   flex-grow: 1;
 }
+#bee-addons-blocks-wrapper :is(.basis-1\/6) {
+  flex-basis: 16.666667%;
+}
+#bee-addons-blocks-wrapper :is(.basis-5\/6) {
+  flex-basis: 83.333333%;
+}
+#bee-addons-blocks-wrapper :is(.basis-24) {
+  flex-basis: 6rem;
+}
+#bee-addons-blocks-wrapper :is(.basis-40) {
+  flex-basis: 10rem;
+}
+#bee-addons-blocks-wrapper :is(.basis-56) {
+  flex-basis: 14rem;
+}
 #bee-addons-blocks-wrapper :is(.transform) {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -234,6 +259,10 @@
 #bee-addons-blocks-wrapper :is(.gap-x-8) {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+}
+#bee-addons-blocks-wrapper :is(.gap-x-6) {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 #bee-addons-blocks-wrapper :is(.space-y-16 > :not([hidden]) ~ :not([hidden])) {
   --tw-space-y-reverse: 0;
@@ -385,6 +414,10 @@
 #bee-addons-blocks-wrapper :is(.py-4) {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+#bee-addons-blocks-wrapper :is(.py-16) {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 #bee-addons-blocks-wrapper :is(.pl-2) {
   padding-left: 0.5rem;

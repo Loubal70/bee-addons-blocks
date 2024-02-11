@@ -1,5 +1,5 @@
 <div x-show="menu === 1">
-	<h2 class="text-base font-semibold leading-7 text-gray-900">Désactivation des blocs</h2>
+	<h2 class="text-base font-semibold leading-7 text-gray-900 mt-0">Désactivation des blocs</h2>
 	<p class="mt-1 text-sm leading-6 text-gray-500">Si tu souhaites optimiser ton temps de chargement,
 		désactiver les blocs que tu n'utilises pas !</p>
 	<?php $blocks = (new BeeAddonsBlocks\Blocks)->getAllBlocksArray(); ?>
