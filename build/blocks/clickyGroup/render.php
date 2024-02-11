@@ -1,8 +1,8 @@
 <?php
 
-use BeeAddonsBlocks\BeeAddonsBlocks;
+use BeeAddonsBlocks\Config;
 
-$blockGap = BeeAddonsBlocks::convert_custom_properties($attributes['style']['spacing']['blockGap'] ?? 0);
+$blockGap = Config::convert_custom_properties($attributes['style']['spacing']['blockGap'] ?? 0);
 $blockWrapperAttributes = get_block_wrapper_attributes([
 	'style' => 'gap: ' . $blockGap . '; justify-content: ' . $attributes['justifyContent']
 ]);

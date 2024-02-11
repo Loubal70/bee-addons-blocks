@@ -1,10 +1,10 @@
 <?php
 
-use BeeAddonsBlocks\BeeAddonsBlocks;
+use BeeAddonsBlocks\Config;
 
-$MediaBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0);
-$ContentBorderRadius = BeeAddonsBlocks::parseRadius($attributes['style']['border']['radius'] ?? 0, true);
-$MimeType = BeeAddonsBlocks::getMimeType($attributes['MediaUrl']);
+$MediaBorderRadius = Config::parseRadius($attributes['style']['border']['radius'] ?? 0);
+$ContentBorderRadius = Config::parseRadius($attributes['style']['border']['radius'] ?? 0, true);
+$MimeType = Config::getMimeType($attributes['MediaUrl']);
 
 $block_wrapper_attributes = get_block_wrapper_attributes([
 	'class' => 'are-vertically-aligned-' . $attributes['InnerTextPosition'],
