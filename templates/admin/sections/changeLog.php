@@ -13,9 +13,14 @@
 					<h3 class="mt-0">
 						<?= __("Adding the admin menu + addition of block optimizations", BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>
 					</h3>
-					<p>
-						<?= __("Adding an interface for site administrators, currently allowing to disable unused blocks. This helps optimize the site's loading time.", BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>
-					</p>
+					<ul class="list-disc pl-4">
+						<li>
+							<?= __("Adding an interface for site administrators, currently allowing to disable unused blocks. This helps optimize the site's loading time.", BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>
+						</li>
+						<li>
+							<?= __("Adding the ability to change the text color for the LowHighlight block.", BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</section>

@@ -123,6 +123,27 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_hooks_SpacerBlockHook__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/hooks/SpacerBlockHook */ "./src/utils/hooks/SpacerBlockHook.jsx");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _utils_formatType_LowHightLight__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/formatType/LowHightLight */ "./src/utils/formatType/LowHightLight.js");
+
+
+
+(0,_utils_formatType_LowHightLight__WEBPACK_IMPORTED_MODULE_2__.registerLowHighlightFormatType)();
+_utils_hooks_SpacerBlockHook__WEBPACK_IMPORTED_MODULE_0__["default"].register();
+
+/***/ }),
+
+/***/ "./src/utils/formatType/LowHightLight.js":
+/*!***********************************************!*\
+  !*** ./src/utils/formatType/LowHightLight.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   registerLowHighlightFormatType: () => (/* binding */ registerLowHighlightFormatType)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/rich-text */ "@wordpress/rich-text");
@@ -135,10 +156,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _assets_low_highlight_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/low-highlight.svg */ "./src/assets/low-highlight.svg");
-/* harmony import */ var _assets_low_highlight_active_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/low-highlight-active.svg */ "./src/assets/low-highlight-active.svg");
-/* harmony import */ var _utils_hooks_SpacerBlockHook__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/hooks/SpacerBlockHook */ "./src/utils/hooks/SpacerBlockHook.jsx");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _assets_low_highlight_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/low-highlight.svg */ "./src/assets/low-highlight.svg");
+/* harmony import */ var _assets_low_highlight_active_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/low-highlight-active.svg */ "./src/assets/low-highlight-active.svg");
 
 
 
@@ -147,58 +166,83 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-(0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__.registerFormatType)("bee-addons-blocks/low-highlight-format", {
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low Highlight", "bee-addons-blocks"),
-  tagName: "span",
-  className: "beeAddonsBlocks-low-highlight",
-  edit: ({
-    onChange,
-    value,
-    contentRef,
-    isActive
-  }) => {
-    const [showColors, setShowColors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
-    const lowHighlight = value.activeFormats?.find(format => format.type === "bee-addons-blocks/low-highlight-format");
-    const attributes = {
-      ...(lowHighlight?.attributes || {}),
-      ...(lowHighlight?.unregisteredAttributes || {})
-    };
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichTextToolbarButton, {
-      icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-        height: 24,
-        width: 24,
-        src: isActive ? _assets_low_highlight_active_svg__WEBPACK_IMPORTED_MODULE_7__["default"] : _assets_low_highlight_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
-      }),
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low Highlight", "bee-addons-blocks"),
-      onClick: () => {
-        setShowColors(true);
-      }
-    }), !!showColors && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
-      anchor: contentRef?.current,
-      onClose: () => setShowColors(false)
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low Highlight", "bee-addons-blocks")
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
-      value: attributes?.['data-color'],
-      onChange: newValue => {
-        if (newValue) {
+function registerLowHighlightFormatType() {
+  (0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__.registerFormatType)("bee-addons-blocks/low-highlight-format", {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low Highlight", "bee-addons-blocks"),
+    tagName: "span",
+    className: "beeAddonsBlocks-low-highlight",
+    edit: ({
+      onChange,
+      value,
+      contentRef,
+      isActive
+    }) => {
+      const [showColors, setShowColors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+      const lowHighlight = value.activeFormats?.find(format => format.type === "bee-addons-blocks/low-highlight-format");
+      const attributes = {
+        ...(lowHighlight?.attributes || {}),
+        ...(lowHighlight?.unregisteredAttributes || {})
+      };
+      const [textColor, setTextColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(attributes?.['data-color-text'] || '');
+      const [backgroundColor, setBackgroundColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(attributes?.['data-color'] || '');
+      const onTextColorChange = newValue => {
+        setTextColor(newValue);
+        applyCompleteFormat(value, newValue, backgroundColor);
+      };
+      const onBackgroundColorChange = newValue => {
+        setBackgroundColor(newValue);
+        applyCompleteFormat(value, textColor, newValue);
+      };
+      const applyCompleteFormat = (value, textColor, backgroundColor) => {
+        if (textColor || backgroundColor) {
           onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__.applyFormat)(value, {
             type: "bee-addons-blocks/low-highlight-format",
             attributes: {
-              'data-color': newValue,
-              style: `background-image: linear-gradient(to right, ${newValue}, ${newValue})`
+              'data-color-text': textColor,
+              'data-color': backgroundColor,
+              style: `color: ${textColor}; background-image: linear-gradient(to right, ${backgroundColor}, ${backgroundColor})`
             }
           }));
         } else {
           onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_1__.removeFormat)(value, "bee-addons-blocks/low-highlight-format"));
         }
-      }
-    }))));
-  }
-});
-_utils_hooks_SpacerBlockHook__WEBPACK_IMPORTED_MODULE_8__["default"].register();
+      };
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichTextToolbarButton, {
+        icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+          height: 24,
+          width: 24,
+          src: isActive ? _assets_low_highlight_active_svg__WEBPACK_IMPORTED_MODULE_7__["default"] : _assets_low_highlight_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
+        }),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low Highlight", "bee-addons-blocks"),
+        onClick: () => {
+          setShowColors(true);
+        }
+      }), !!showColors && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
+        anchor: contentRef?.current,
+        onClose: () => setShowColors(false)
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Low Highlight", "bee-addons-blocks")
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+        style: {
+          display: "block",
+          marginBottom: "1rem"
+        }
+      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Color of the text", "bee-addons-blocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
+        value: textColor,
+        onChange: onTextColorChange
+      }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+        style: {
+          display: "block",
+          marginTop: "1rem",
+          marginBottom: "1rem"
+        }
+      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Background color of the text", "bee-addons-blocks")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
+        value: backgroundColor,
+        onChange: onBackgroundColorChange
+      }))));
+    }
+  });
+}
 
 /***/ }),
 

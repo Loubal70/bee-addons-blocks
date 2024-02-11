@@ -7,13 +7,15 @@ namespace BeeAddonsBlocks;
  * Description:       Discover BeeAddonsBlock, the plugin that brings new features and enhancements to the WordPress Gutenberg editor. Simplify the creation of custom blocks with advanced options and a user-friendly interface. Bring your ideas to life and easily create unique designs with our enhanced Gutenberg plugin.
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           0.2.0
+ * Version:           0.1.6
  * Author:            Louis Boulanger
  * Author URI:        https://louis-boulanger.fr/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       bee-addons-blocks
  * Domain Path: /languages
+ *
+ * @package           bee-addons-blocks
  */
 
 if (!defined('ABSPATH')) {

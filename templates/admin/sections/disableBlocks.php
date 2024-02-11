@@ -1,7 +1,10 @@
 <div x-show="menu === 1">
-	<h2 class="text-base font-semibold leading-7 text-gray-900 mt-0">Désactivation des blocs</h2>
-	<p class="mt-1 text-sm leading-6 text-gray-500">Si tu souhaites optimiser ton temps de chargement,
-		désactiver les blocs que tu n'utilises pas !</p>
+	<h2 class="text-base font-semibold leading-7 text-gray-900 mt-0">
+		<?= __("Disabling Gutenberg blocks", BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>
+	</h2>
+	<p class="mt-1 text-sm leading-6 text-gray-500">
+		<?= __("If you want to optimize your loading time, disable the blocks you don't use!", BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>
+	</p>
 	<?php $blocks = (new BeeAddonsBlocks\Blocks)->getAllBlocksArray(); ?>
 
 
@@ -9,7 +12,7 @@
 		 class="pt-6 space-y-4 divide-y divide-gray-100 border-0 border-t border-solid border-gray-200 text-sm leading-6"
 		 :class="{ 'opacity-50': !loaded }">
 		<div
-			x-show="!loaded"><?php echo __('Chargement en cours...', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?></div>
+			x-show="!loaded"><?php echo __('Loading...', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?></div>
 		<?php if (!empty($blocks)): ?>
 			<?php foreach ($blocks as $block_type) : ?>
 				<div x-show="loaded"
@@ -26,7 +29,7 @@
 											class="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6"><?php echo $block_type['title']; ?></span>
 						<button type="button"
 								class="font-semibold"
-								x-text="blocks.includes('<?php echo $block_type['name']; ?>') ? 'Désactivé' : 'Activé'"></button>
+								x-text="blocks.includes('<?php echo $block_type['name']; ?>') ? '<?= __('Disable', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>' : '<?= __('Enable', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>' "></button>
 					</label>
 					<input id="<?php echo $block_type['name']; ?>"
 						   name="<?php echo $block_type['name']; ?>"
@@ -38,7 +41,7 @@
 			<?php endforeach; ?>
 		<?php else: ?>
 			<div x-show="loaded"
-				 class="text-gray-500"><?php echo __('Aucun bloc trouvé', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?></div>
+				 class="text-gray-500"><?php echo __('It seems that no blocks were found.', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?></div>
 		<?php endif; ?>
 	</div>
 </div>

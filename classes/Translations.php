@@ -7,7 +7,7 @@ class Translations extends BootLoadClass
 	public function register(): void
 	{
 		add_action('admin_enqueue_scripts', [$this, 'loadScriptTranslations'], 20);
-		add_action('plugins_loaded', [$this, 'loadPluginTranslations']);
+		add_action('init', [$this, 'loadPluginTranslations']);
 	}
 
 	public function loadScriptTranslations(): void
@@ -26,7 +26,7 @@ class Translations extends BootLoadClass
 		load_plugin_textdomain(
 			BEE_ADDONS_BLOCKS_TEXT_DOMAIN,
 			false,
-			BEE_ADDONS_BLOCKS_DIR . 'languages'
+			BEE_ADDONS_BLOCKS_TEXT_DOMAIN . '/languages'
 		);
 	}
 }

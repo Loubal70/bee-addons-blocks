@@ -13,8 +13,8 @@ about previous versions.
 <summary><strong>v0.1.6</strong></summary>
 <ul>
 	<li>Add the admin menu</li>
-	<li>Adding the ability to disable blocks in order to optimize loading times
-</li>
+	<li>Adding the ability to disable blocks in order to optimize loading times</li>
+	<li>Adding the ability to change the text color for the LowHighlight block.</li>
 </ul>
 </details>
 

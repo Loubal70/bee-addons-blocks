@@ -96,14 +96,8 @@
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-#bee-addons-blocks-wrapper :is(.invisible) {
-  visibility: hidden;
-}
 #bee-addons-blocks-wrapper :is(.static) {
   position: static;
-}
-#bee-addons-blocks-wrapper :is(.fixed) {
-  position: fixed;
 }
 #bee-addons-blocks-wrapper :is(.absolute) {
   position: absolute;
@@ -116,9 +110,6 @@
 }
 #bee-addons-blocks-wrapper :is(.-top-3) {
   top: -0.75rem;
-}
-#bee-addons-blocks-wrapper :is(.-top-6) {
-  top: -1.5rem;
 }
 #bee-addons-blocks-wrapper :is(.-top-\[1\.0625rem\]) {
   top: -1.0625rem;
@@ -137,14 +128,11 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
-#bee-addons-blocks-wrapper :is(.mt-1) {
-  margin-top: 0.25rem;
-}
 #bee-addons-blocks-wrapper :is(.mt-0) {
   margin-top: 0px;
 }
-#bee-addons-blocks-wrapper :is(.mt-4) {
-  margin-top: 1rem;
+#bee-addons-blocks-wrapper :is(.mt-1) {
+  margin-top: 0.25rem;
 }
 #bee-addons-blocks-wrapper :is(.block) {
   display: block;
@@ -158,17 +146,8 @@
 #bee-addons-blocks-wrapper :is(.h-6) {
   height: 1.5rem;
 }
-#bee-addons-blocks-wrapper :is(.h-full) {
-  height: 100%;
-}
 #bee-addons-blocks-wrapper :is(.h-\[0\.5625rem\]) {
   height: 0.5625rem;
-}
-#bee-addons-blocks-wrapper :is(.max-h-64) {
-  max-height: 16rem;
-}
-#bee-addons-blocks-wrapper :is(.max-h-96) {
-  max-height: 24rem;
 }
 #bee-addons-blocks-wrapper :is(.max-h-72) {
   max-height: 18rem;
@@ -176,35 +155,23 @@
 #bee-addons-blocks-wrapper :is(.w-6) {
   width: 1.5rem;
 }
-#bee-addons-blocks-wrapper :is(.w-64) {
-  width: 16rem;
-}
-#bee-addons-blocks-wrapper :is(.w-full) {
-  width: 100%;
+#bee-addons-blocks-wrapper :is(.w-\[0\.5625rem\]) {
+  width: 0.5625rem;
 }
 #bee-addons-blocks-wrapper :is(.w-auto) {
   width: auto;
 }
-#bee-addons-blocks-wrapper :is(.w-3\/4) {
-  width: 75%;
-}
-#bee-addons-blocks-wrapper :is(.w-\[0\.5625rem\]) {
-  width: 0.5625rem;
-}
 #bee-addons-blocks-wrapper :is(.w-px) {
   width: 1px;
-}
-#bee-addons-blocks-wrapper :is(.w-56) {
-  width: 14rem;
 }
 #bee-addons-blocks-wrapper :is(.max-w-2xl) {
   max-width: 42rem;
 }
-#bee-addons-blocks-wrapper :is(.max-w-7xl) {
-  max-width: 80rem;
-}
 #bee-addons-blocks-wrapper :is(.max-w-5xl) {
   max-width: 64rem;
+}
+#bee-addons-blocks-wrapper :is(.max-w-7xl) {
+  max-width: 80rem;
 }
 #bee-addons-blocks-wrapper :is(.max-w-none) {
   max-width: none;
@@ -212,32 +179,17 @@
 #bee-addons-blocks-wrapper :is(.flex-none) {
   flex: none;
 }
-#bee-addons-blocks-wrapper :is(.flex-shrink-0) {
-  flex-shrink: 0;
-}
 #bee-addons-blocks-wrapper :is(.shrink-0) {
   flex-shrink: 0;
-}
-#bee-addons-blocks-wrapper :is(.grow) {
-  flex-grow: 1;
-}
-#bee-addons-blocks-wrapper :is(.basis-1\/6) {
-  flex-basis: 16.666667%;
-}
-#bee-addons-blocks-wrapper :is(.basis-5\/6) {
-  flex-basis: 83.333333%;
-}
-#bee-addons-blocks-wrapper :is(.basis-24) {
-  flex-basis: 6rem;
-}
-#bee-addons-blocks-wrapper :is(.basis-40) {
-  flex-basis: 10rem;
 }
 #bee-addons-blocks-wrapper :is(.basis-56) {
   flex-basis: 14rem;
 }
 #bee-addons-blocks-wrapper :is(.transform) {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+#bee-addons-blocks-wrapper :is(.list-disc) {
+  list-style-type: disc;
 }
 #bee-addons-blocks-wrapper :is(.items-center) {
   align-items: center;
@@ -253,21 +205,12 @@
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
 }
-#bee-addons-blocks-wrapper :is(.gap-y-1) {
-  row-gap: 0.25rem;
-}
-#bee-addons-blocks-wrapper :is(.gap-x-8) {
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-}
 #bee-addons-blocks-wrapper :is(.gap-x-6) {
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
 }
-#bee-addons-blocks-wrapper :is(.space-y-16 > :not([hidden]) ~ :not([hidden])) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(4rem * var(--tw-space-y-reverse));
+#bee-addons-blocks-wrapper :is(.gap-y-1) {
+  row-gap: 0.25rem;
 }
 #bee-addons-blocks-wrapper :is(.space-y-4 > :not([hidden]) ~ :not([hidden])) {
   --tw-space-y-reverse: 0;
@@ -283,23 +226,17 @@
   --tw-divide-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-divide-opacity));
 }
-#bee-addons-blocks-wrapper :is(.overflow-hidden) {
-  overflow: hidden;
-}
 #bee-addons-blocks-wrapper :is(.overflow-x-auto) {
   overflow-x: auto;
 }
 #bee-addons-blocks-wrapper :is(.whitespace-nowrap) {
   white-space: nowrap;
 }
-#bee-addons-blocks-wrapper :is(.rounded-md) {
-  border-radius: 0.375rem;
-}
-#bee-addons-blocks-wrapper :is(.rounded-xl) {
-  border-radius: 0.75rem;
-}
 #bee-addons-blocks-wrapper :is(.rounded-full) {
   border-radius: 9999px;
+}
+#bee-addons-blocks-wrapper :is(.rounded-md) {
+  border-radius: 0.375rem;
 }
 #bee-addons-blocks-wrapper :is(.border) {
   border-width: 1px;
@@ -320,45 +257,17 @@
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
-#bee-addons-blocks-wrapper :is(.border-gray-700) {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-#bee-addons-blocks-wrapper :is(.border-indigo-800) {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 48 163 / var(--tw-border-opacity));
-}
 #bee-addons-blocks-wrapper :is(.border-slate-300) {
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
-#bee-addons-blocks-wrapper :is(.bg-gray-300) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-#bee-addons-blocks-wrapper :is(.bg-gray-50) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-#bee-addons-blocks-wrapper :is(.bg-red-500) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-#bee-addons-blocks-wrapper :is(.bg-gray-100) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-#bee-addons-blocks-wrapper :is(.bg-gray-800) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-#bee-addons-blocks-wrapper :is(.bg-gray-500) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
 #bee-addons-blocks-wrapper :is(.bg-gray-200) {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+#bee-addons-blocks-wrapper :is(.bg-gray-300) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 #bee-addons-blocks-wrapper :is(.bg-slate-200) {
   --tw-bg-opacity: 1;
@@ -368,10 +277,6 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-#bee-addons-blocks-wrapper :is(.object-contain) {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 #bee-addons-blocks-wrapper :is(.object-cover) {
   -o-object-fit: cover;
      object-fit: cover;
@@ -379,14 +284,6 @@
 #bee-addons-blocks-wrapper :is(.object-center) {
   -o-object-position: center;
      object-position: center;
-}
-#bee-addons-blocks-wrapper :is(.object-top) {
-  -o-object-position: top;
-     object-position: top;
-}
-#bee-addons-blocks-wrapper :is(.object-bottom) {
-  -o-object-position: bottom;
-     object-position: bottom;
 }
 #bee-addons-blocks-wrapper :is(.p-4) {
   padding: 1rem;
@@ -403,20 +300,15 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
+#bee-addons-blocks-wrapper :is(.py-16) {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 #bee-addons-blocks-wrapper :is(.py-2) {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-#bee-addons-blocks-wrapper :is(.py-3) {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-#bee-addons-blocks-wrapper :is(.py-4) {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-#bee-addons-blocks-wrapper :is(.py-16) {
-  padding-top: 4rem;
+#bee-addons-blocks-wrapper :is(.pb-16) {
   padding-bottom: 4rem;
 }
 #bee-addons-blocks-wrapper :is(.pl-2) {
@@ -425,8 +317,8 @@
 #bee-addons-blocks-wrapper :is(.pr-3) {
   padding-right: 0.75rem;
 }
-#bee-addons-blocks-wrapper :is(.pt-16) {
-  padding-top: 4rem;
+#bee-addons-blocks-wrapper :is(.pt-2) {
+  padding-top: 0.5rem;
 }
 #bee-addons-blocks-wrapper :is(.pt-6) {
   padding-top: 1.5rem;
@@ -434,14 +326,8 @@
 #bee-addons-blocks-wrapper :is(.pt-8) {
   padding-top: 2rem;
 }
-#bee-addons-blocks-wrapper :is(.pb-16) {
-  padding-bottom: 4rem;
-}
-#bee-addons-blocks-wrapper :is(.pl-7) {
-  padding-left: 1.75rem;
-}
-#bee-addons-blocks-wrapper :is(.pt-2) {
-  padding-top: 0.5rem;
+#bee-addons-blocks-wrapper :is(.pl-4) {
+  padding-left: 1rem;
 }
 #bee-addons-blocks-wrapper :is(.text-base) {
   font-size: 1rem;
@@ -463,37 +349,29 @@
 #bee-addons-blocks-wrapper :is(.leading-7) {
   line-height: 1.75rem;
 }
+#bee-addons-blocks-wrapper :is(.text-black) {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 #bee-addons-blocks-wrapper :is(.text-gray-500) {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-#bee-addons-blocks-wrapper :is(.text-gray-700) {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
-}
-#bee-addons-blocks-wrapper :is(.text-gray-900) {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-#bee-addons-blocks-wrapper :is(.text-yellow-600) {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
-}
-#bee-addons-blocks-wrapper :is(.text-gray-400) {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 #bee-addons-blocks-wrapper :is(.text-gray-800) {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
+#bee-addons-blocks-wrapper :is(.text-gray-900) {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
 #bee-addons-blocks-wrapper :is(.text-slate-500) {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
-#bee-addons-blocks-wrapper :is(.text-black) {
+#bee-addons-blocks-wrapper :is(.text-yellow-600) {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 #bee-addons-blocks-wrapper :is(.no-underline) {
   text-decoration-line: none;
@@ -506,17 +384,6 @@
 }
 #bee-addons-blocks-wrapper :is(.opacity-50) {
   opacity: 0.5;
-}
-#bee-addons-blocks-wrapper :is(.ring-1) {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-#bee-addons-blocks-wrapper :is(.ring-slate-700\/10) {
-  --tw-ring-color: rgb(51 65 85 / 0.1);
-}
-#bee-addons-blocks-wrapper :is(.ring-offset-\[-1px\]) {
-  --tw-ring-offset-width: -1px;
 }
 #bee-addons-blocks-wrapper :is(.blur) {
   --tw-blur: blur(8px);
@@ -550,19 +417,9 @@
   padding-left: 0px;
 }
 
-#bee-addons-blocks-wrapper :is(.hover\:bg-gray-50:hover) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
 #bee-addons-blocks-wrapper :is(.hover\:bg-gray-200:hover) {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-#bee-addons-blocks-wrapper :is(.hover\:text-yellow-600:hover) {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
 #bee-addons-blocks-wrapper :is(.focus\:shadow-none:focus) {
@@ -571,22 +428,12 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-#bee-addons-blocks-wrapper :is(.focus\:outline-none:focus) {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 @media (min-width: 640px) {
   #bee-addons-blocks-wrapper :is(.sm\:w-64) {
     width: 16rem;
   }
   #bee-addons-blocks-wrapper :is(.sm\:flex-none) {
     flex: none;
-  }
-  #bee-addons-blocks-wrapper :is(.sm\:space-y-20 > :not([hidden]) ~ :not([hidden])) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(5rem * var(--tw-space-y-reverse));
   }
   #bee-addons-blocks-wrapper :is(.sm\:px-6) {
     padding-left: 1.5rem;
@@ -598,9 +445,6 @@
 }
 
 @media (min-width: 768px) {
-  #bee-addons-blocks-wrapper :is(.md\:top-0) {
-    top: 0px;
-  }
   #bee-addons-blocks-wrapper :is(.md\:top-2) {
     top: 0.5rem;
   }
@@ -610,29 +454,14 @@
   #bee-addons-blocks-wrapper :is(.md\:top-\[0\.4375rem\]) {
     top: 0.4375rem;
   }
-  #bee-addons-blocks-wrapper :is(.md\:flex) {
-    display: flex;
-  }
-  #bee-addons-blocks-wrapper :is(.md\:w-1\/4) {
-    width: 25%;
-  }
   #bee-addons-blocks-wrapper :is(.md\:w-3\/4) {
     width: 75%;
-  }
-  #bee-addons-blocks-wrapper :is(.md\:w-1\/6) {
-    width: 16.666667%;
-  }
-  #bee-addons-blocks-wrapper :is(.md\:w-5\/6) {
-    width: 83.333333%;
   }
   #bee-addons-blocks-wrapper :is(.md\:pl-0) {
     padding-left: 0px;
   }
   #bee-addons-blocks-wrapper :is(.md\:pl-12) {
     padding-left: 3rem;
-  }
-  #bee-addons-blocks-wrapper :is(.md\:pr-12) {
-    padding-right: 3rem;
   }
   #bee-addons-blocks-wrapper :is(.md\:pt-0) {
     padding-top: 0px;
@@ -650,18 +479,11 @@
   #bee-addons-blocks-wrapper :is(.lg\:max-w-none) {
     max-width: none;
   }
-  #bee-addons-blocks-wrapper :is(.lg\:flex-auto) {
-    flex: 1 1 auto;
-  }
   #bee-addons-blocks-wrapper :is(.lg\:flex-col) {
     flex-direction: column;
   }
   #bee-addons-blocks-wrapper :is(.lg\:px-0) {
     padding-left: 0px;
     padding-right: 0px;
-  }
-  #bee-addons-blocks-wrapper :is(.lg\:px-8) {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 }

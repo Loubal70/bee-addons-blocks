@@ -13,7 +13,6 @@ class Options extends BootLoadClass
 		SettingsPage::make(__('Bee Addons Blocks', BEE_ADDONS_BLOCKS_TEXT_DOMAIN), __('Addons Blocks', BEE_ADDONS_BLOCKS_TEXT_DOMAIN), BEE_ADDONS_BLOCKS_TEXT_DOMAIN)
 			->setIconUrl($this->getIcon())
 			->setPosition(100)
-			->addSection(null, 'setting', __('Set the default parameters of your animations', BEE_ADDONS_BLOCKS_TEXT_DOMAIN))
 			->render();
 	}
 
