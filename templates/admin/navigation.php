@@ -1,6 +1,6 @@
 <li x-on:click="menu = 1">
 	<a href="#"
-	   class="hover:bg-gray-200 text-yellow-600 group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm leading-6 font-semibold no-underline focus:shadow-none"
+	   class="hover:bg-gray-200 group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm leading-6 font-semibold no-underline focus:shadow-none"
 	   :class="menu === 1 ? 'text-yellow-600 bg-gray-200' : 'text-gray-800'">
 		<svg class="h-6 w-6 shrink-0"
 			 :class="menu === 1 ? 'text-yellow-600' : 'text-gray-800'"
