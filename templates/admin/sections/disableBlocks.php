@@ -23,13 +23,19 @@
 					 x-transition:leave-start="opacity-100"
 					 x-transition:leave-end="opacity-0">
 					<label for="<?php echo $block_type['name']; ?>"
-						   class="p-4 flex items-center justify-between"
-						   :class="{ 'bg-gray-300 opacity-50': blocks.includes('<?php echo $block_type['name']; ?>') }">
+						   class="p-4 flex items-center justify-between rounded-md"
+						   :class="{ 'bg-gray-200/50': blocks.includes('<?php echo $block_type['name']; ?>') }">
 										<span
 											class="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6"><?php echo $block_type['title']; ?></span>
-						<button type="button"
-								class="font-semibold"
-								x-text="blocks.includes('<?php echo $block_type['name']; ?>') ? '<?= __('Disable', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>' : '<?= __('Enable', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>' "></button>
+
+						<span class="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-semibold"
+							:class="blocks.includes('<?php echo $block_type['name']; ?>')
+									? 'bg-red-100 text-red-700'
+									: 'bg-green-100 text-green-700'"
+							x-text="blocks.includes('<?php echo $block_type['name']; ?>')
+								? '<?= __('Disable', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>'
+								: '<?= __('Enable', BEE_ADDONS_BLOCKS_TEXT_DOMAIN) ?>' "
+						></span>
 					</label>
 					<input id="<?php echo $block_type['name']; ?>"
 						   name="<?php echo $block_type['name']; ?>"
