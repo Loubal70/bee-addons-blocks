@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bee Addons Blocks\n"
-"POT-Creation-Date: 2024-02-11 22:36+0100\n"
+"POT-Creation-Date: 2024-03-03 19:35+0100\n"
 "PO-Revision-Date: 2024-02-11 22:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,6 +30,14 @@ msgstr ""
 
 #: classes/Options.php:13
 msgid "Addons Blocks"
+msgstr ""
+
+#: classes/Options.php:16
+msgid "Set the default parameters for openAi"
+msgstr ""
+
+#: classes/Options.php:19
+msgid "(generated from https://platform.openai.com/api-keys)"
 msgstr ""
 
 #: src/blocks/MediaBlurredBackground/edit.js:54
@@ -95,46 +103,76 @@ msgstr ""
 msgid "Background color of the text"
 msgstr ""
 
+#: src/utils/hooks/GenerateExcerptWithOpenAi.js:40
+msgid "Generate AI Excerpt"
+msgstr ""
+
 #: templates/admin/navigation.php:12
 msgid "General"
 msgstr ""
 
 #: templates/admin/sections/changeLog.php:14
-msgid "Adding the admin menu + addition of block optimizations"
+msgid "OpenAI integrations"
 msgstr ""
 
 #: templates/admin/sections/changeLog.php:18
+msgid ""
+"The world of artificial intelligence is coming to BeeAddonsBlocks. Now you "
+"have the ability to automatically generate your article excerpts and other "
+"custom post types. It's as simple as inserting your OpenAI API key "
+"(generated from https://platform.openai.com/api-keys). Once registered, "
+"you'll find a 'Generate My Excerpt' section in the settings menu of your "
+"post, and let the magic happen!"
+msgstr ""
+
+#: templates/admin/sections/changeLog.php:36
+msgid "Adding the admin menu + addition of block optimizations"
+msgstr ""
+
+#: templates/admin/sections/changeLog.php:40
 msgid ""
 "Adding an interface for site administrators, currently allowing to disable "
 "unused blocks. This helps optimize the site's loading time."
 msgstr ""
 
-#: templates/admin/sections/changeLog.php:21
+#: templates/admin/sections/changeLog.php:43
 msgid "Adding the ability to change the text color for the LowHighlight block."
 msgstr ""
 
-#: templates/admin/sections/disableBlocks.php:3
+#: templates/admin/sections/disableBlocks.php:4
+msgid "OpenAi key"
+msgstr ""
+
+#: templates/admin/sections/disableBlocks.php:8
+msgid "Generate your extracts automatically with artificial intelligence!"
+msgstr ""
+
+#: templates/admin/sections/disableBlocks.php:27
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin/sections/disableBlocks.php:39
 msgid "Disabling Gutenberg blocks"
 msgstr ""
 
-#: templates/admin/sections/disableBlocks.php:6
+#: templates/admin/sections/disableBlocks.php:43
 msgid ""
 "If you want to optimize your loading time, disable the blocks you don't use!"
 msgstr ""
 
-#: templates/admin/sections/disableBlocks.php:15
+#: templates/admin/sections/disableBlocks.php:53
 msgid "Loading..."
 msgstr ""
 
-#: templates/admin/sections/disableBlocks.php:32
+#: templates/admin/sections/disableBlocks.php:74
 msgid "Disable"
 msgstr ""
 
-#: templates/admin/sections/disableBlocks.php:32
+#: templates/admin/sections/disableBlocks.php:75
 msgid "Enable"
 msgstr ""
 
-#: templates/admin/sections/disableBlocks.php:44
+#: templates/admin/sections/disableBlocks.php:88
 msgid "It seems that no blocks were found."
 msgstr ""
 

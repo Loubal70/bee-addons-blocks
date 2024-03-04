@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bee-addons-"
 "blocks\n"
-"POT-Creation-Date: 2024-02-11 22:36+0100\n"
-"PO-Revision-Date: 2024-02-11 22:37+0100\n"
+"POT-Creation-Date: 2024-03-03 19:35+0100\n"
+"PO-Revision-Date: 2024-03-03 19:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -22,6 +22,14 @@ msgstr ""
 #: classes/Options.php:13
 msgid "Addons Blocks"
 msgstr ""
+
+#: classes/Options.php:16
+msgid "Set the default parameters for openAi"
+msgstr "Définir les paramètres nécessaires pour OpenAi"
+
+#: classes/Options.php:19
+msgid "(generated from https://platform.openai.com/api-keys)"
+msgstr "(généré depuis https://platform.openai.com/api-keys)"
 
 #: src/blocks/MediaBlurredBackground/edit.js:54
 msgid "Title"
@@ -86,15 +94,40 @@ msgstr "Couleur du texte"
 msgid "Background color of the text"
 msgstr "Couleur du fond"
 
+#: src/utils/hooks/GenerateExcerptWithOpenAi.js:40
+msgid "Generate AI Excerpt"
+msgstr "Générer un extrait avec l’IA"
+
 #: templates/admin/navigation.php:12
 msgid "General"
 msgstr "Général"
 
 #: templates/admin/sections/changeLog.php:14
+msgid "OpenAI integrations"
+msgstr "Intégration OpenAi"
+
+#: templates/admin/sections/changeLog.php:18
+msgid ""
+"The world of artificial intelligence is coming to BeeAddonsBlocks. Now you "
+"have the ability to automatically generate your article excerpts and other "
+"custom post types. It's as simple as inserting your OpenAI API key "
+"(generated from https://platform.openai.com/api-keys). Once registered, "
+"you'll find a 'Generate My Excerpt' section in the settings menu of your "
+"post, and let the magic happen!"
+msgstr ""
+"Le monde de l’intelligence artificielle arrive sur BeeAddonsBlocks. "
+"Désormais, vous pouvez automatiser la génération de vos extraits d’articles "
+"et autres types de publications personnalisées. Pour cela, il vous suffit "
+"d’insérer votre clé API OpenAI, que vous pouvez générer depuis le site "
+"https://platform.openai.com/api-keys. Une fois votre clé API enregistrée, "
+"vous trouverez une section « Générez mon extrait » dans le menu des "
+"paramètres de votre article. Il vous suffit de laisser opérer la magie !"
+
+#: templates/admin/sections/changeLog.php:36
 msgid "Adding the admin menu + addition of block optimizations"
 msgstr "Ajout du menu admin + ajout d’optimisations de blocs"
 
-#: templates/admin/sections/changeLog.php:18
+#: templates/admin/sections/changeLog.php:40
 msgid ""
 "Adding an interface for site administrators, currently allowing to disable "
 "unused blocks. This helps optimize the site's loading time."
@@ -103,36 +136,48 @@ msgstr ""
 "actuellement de désactiver les blocs inutilisés. Cela permet d’optimiser le "
 "temps de chargement du site."
 
-#: templates/admin/sections/changeLog.php:21
+#: templates/admin/sections/changeLog.php:43
 msgid "Adding the ability to change the text color for the LowHighlight block."
 msgstr ""
 "Ajout de la possibilité de changer la couleur du texte pour le bloc "
 "LowHighlight."
 
-#: templates/admin/sections/disableBlocks.php:3
+#: templates/admin/sections/disableBlocks.php:4
+msgid "OpenAi key"
+msgstr "Clé OpenAi"
+
+#: templates/admin/sections/disableBlocks.php:8
+msgid "Generate your extracts automatically with artificial intelligence!"
+msgstr "Générez votre extrait automatiquement avec l’intelligence articielle"
+
+#: templates/admin/sections/disableBlocks.php:27
+msgid "Save Settings"
+msgstr "Sauvegarder les paramètres"
+
+#: templates/admin/sections/disableBlocks.php:39
 msgid "Disabling Gutenberg blocks"
 msgstr "Désactiver les blocs gutenberg"
 
-#: templates/admin/sections/disableBlocks.php:6
+#: templates/admin/sections/disableBlocks.php:43
 msgid ""
 "If you want to optimize your loading time, disable the blocks you don't use!"
 msgstr ""
 "Si vous souhaitez optimiser votre temps de chargement, désactivez les blocs "
 "que vous n’utilisez pas !"
 
-#: templates/admin/sections/disableBlocks.php:15
+#: templates/admin/sections/disableBlocks.php:53
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: templates/admin/sections/disableBlocks.php:32
+#: templates/admin/sections/disableBlocks.php:74
 msgid "Disable"
 msgstr "Désactivé"
 
-#: templates/admin/sections/disableBlocks.php:32
+#: templates/admin/sections/disableBlocks.php:75
 msgid "Enable"
 msgstr "Activé"
 
-#: templates/admin/sections/disableBlocks.php:44
+#: templates/admin/sections/disableBlocks.php:88
 msgid "It seems that no blocks were found."
 msgstr "Il semble qu’aucun bloc n’ait été trouvé."
 
