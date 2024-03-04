@@ -2,7 +2,7 @@ import { PluginMoreMenuItem } from '@wordpress/edit-post';
 import { select } from '@wordpress/data';
 import {__} from "@wordpress/i18n";
 
-export default class MyButtonMoreMenuItemTest {
+export default class GenerateExcerptWithOpenAi {
 	onGenerateAIExcerpt() {
 		const postContent = select('core/editor').getEditedPostAttribute('content');
 		try {
@@ -13,16 +13,15 @@ export default class MyButtonMoreMenuItemTest {
 				},
 				body: JSON.stringify({ postContent })
 			})
-				.then(response => {
-					if (response.ok) {
-						return response.json();
-					}
-					throw new Error(`La requête a échoué avec le statut : ${response.status}`);
-				})
 				.then(responseData => {
+					if (!responseData.ok) {
+						throw new Error('Failed to fetch');
+					}
+					console.log(responseData);
 					const excerptTextArea = document.querySelector('.editor-post-excerpt__textarea textarea');
 					if (excerptTextArea) {
 						excerptTextArea.textContent = responseData['excerpt'];
+						excerptTextArea.value = responseData['excerpt'];
 						excerptTextArea.dispatchEvent(new Event('input', { bubbles: true }));
 					} else {
 						console.error('No excerpt textarea found');

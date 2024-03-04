@@ -84,7 +84,7 @@ class SettingsField
 	{
 		if (!$this->getDescription()) return;
 		?>
-		<p class="description"><?php echo esc_html($this->getDescription()); ?></p>
+		<p class="description italic text-xs"><?php echo esc_html($this->getDescription()); ?></p>
 		<?php
 
 	}
@@ -131,7 +131,7 @@ class SettingsField
 	{
 		?>
 		<label>
-			<select class="widefat motion-select px-2"
+			<select class="widefat px-2"
 					name="<?php echo esc_attr($this->getOptionKey($this->getName())); ?>"
 				<?php $this->renderAttributes(); ?>
 			>

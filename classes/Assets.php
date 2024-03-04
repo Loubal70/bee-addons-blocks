@@ -18,13 +18,12 @@ class Assets extends BootLoadClass
 		if ( $current_screen && 'toplevel_page_bee-addons-blocks' === $current_screen->id ) {
 			wp_register_style('bee-addons-blocks-admin-style', BEE_ADDONS_BLOCKS_URL . 'dist/css/admin.css');
 			wp_enqueue_style('bee-addons-blocks-admin-style');
-
-			wp_enqueue_script('bee-addons-blocks-admin-script', BEE_ADDONS_BLOCKS_URL . 'dist/js/admin.js', ['wp-blocks', 'wp-element', 'wp-i18n', 'wp-block-editor']);
-			wp_localize_script('bee-addons-blocks-admin-script', 'wpData', array(
-				'siteUrl' => esc_url(home_url('/'))
-			));
-
 		}
+
+		wp_enqueue_script('bee-addons-blocks-admin-script', BEE_ADDONS_BLOCKS_URL . 'dist/js/admin.js', ['wp-blocks', 'wp-element', 'wp-i18n', 'wp-block-editor']);
+		wp_localize_script('bee-addons-blocks-admin-script', 'wpData', array(
+			'siteUrl' => esc_url(home_url('/'))
+		));
 
 		wp_enqueue_script('bee-addons-blocks-index', BEE_ADDONS_BLOCKS_URL . '/build/index.js', [
 			'wp-blocks', 'wp-element', 'wp-i18n', 'wp-block-editor'

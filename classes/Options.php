@@ -13,6 +13,11 @@ class Options extends BootLoadClass
 		SettingsPage::make(__('Bee Addons Blocks', BEE_ADDONS_BLOCKS_TEXT_DOMAIN), __('Addons Blocks', BEE_ADDONS_BLOCKS_TEXT_DOMAIN), BEE_ADDONS_BLOCKS_TEXT_DOMAIN)
 			->setIconUrl($this->getIcon())
 			->setPosition(100)
+			->addSection(null, 'openai_excerpt', __('Set the default parameters for openAi'))
+
+			->addField(null, 'openai_key', 'text',
+				__('(generated from https://platform.openai.com/api-keys)', BEE_ADDONS_BLOCKS_TEXT_DOMAIN),
+				'openai_excerpt', [],'col-span-12')
 			->render();
 	}
 

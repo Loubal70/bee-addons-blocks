@@ -15,6 +15,13 @@ about previous versions.
 	<li>Add the admin menu</li>
 	<li>Adding the ability to disable blocks in order to optimize loading times</li>
 	<li>Adding the ability to change the text color for the LowHighlight block.</li>
+	<li>
+		The world of artificial intelligence is coming to BeeAddonsBlocks.
+		Now you have the ability to automatically generate your article excerpts and other custom post types.
+		It's as simple as inserting your OpenAI API key (generated from https://platform.openai.com/api-keys).
+		Once registered, you'll find a 'Generate My Excerpt' section in the settings menu of your post, and
+		let the magic happen!
+	</li>
 </ul>
 </details>
 

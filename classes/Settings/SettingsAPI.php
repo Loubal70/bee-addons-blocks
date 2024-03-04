@@ -3,9 +3,12 @@
 namespace BeeAddonsBlocks\Settings;
 
 use BeeAddonsBlocks\BootLoadClass;
+use BeeAddonsBlocks\OpenAi;
 
 class SettingsAPI extends BootLoadClass
 {
+	private ?\WP_Post $post;
+
 	public function register(): void
 	{
 		add_action('rest_api_init', [$this, 'registerRestApiEndpoints']);
@@ -13,6 +16,9 @@ class SettingsAPI extends BootLoadClass
 
 	public function registerRestApiEndpoints(): void
 	{
+		global $post;
+		$this->post = $post;
+
 		register_rest_route('bee-addons-blocks/v1', '/blocks-types-excluded', [
 			'methods' => 'POST',
 			'callback' => [$this, 'setExcludedBlocksType'],
@@ -22,6 +28,12 @@ class SettingsAPI extends BootLoadClass
 		register_rest_route('bee-addons-blocks/v1', '/get-blocks-types-excluded', [
 			'methods' => 'GET',
 			'callback' => [$this, 'getExcludedBlocksType'],
+			'permission_callback' => '__return_true',
+		]);
+
+		register_rest_route('bee-addons-blocks/v1', '/openai-generate-excerpt', [
+			'methods' => 'POST',
+			'callback' => [OpenAi::class, 'generateExcerptWithOpenAi'],
 			'permission_callback' => '__return_true',
 		]);
 	}
@@ -36,4 +48,6 @@ class SettingsAPI extends BootLoadClass
 		update_option('beeAddonsBlocks_blocksTypeExcludes', $request->get_json_params());
 		return rest_ensure_response('success');
 	}
+
+
 }

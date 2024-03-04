@@ -53,7 +53,7 @@ class SettingsPage extends SettingsAbstract
 	}
 
 	public function addField(
-		string $title,
+		?string $title,
 		string $name,
 		string $type = 'text',
 		string $description = '',
@@ -64,7 +64,7 @@ class SettingsPage extends SettingsAbstract
 	{
 		$field = [
 			'name' => $name,
-			'title' => $title,
+			'title' => $title ?? null,
 			'description' => $description,
 			'type' => $type,
 			'section' => $section,

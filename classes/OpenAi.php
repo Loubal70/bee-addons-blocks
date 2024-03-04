@@ -4,30 +4,39 @@ namespace BeeAddonsBlocks;
 
 class OpenAi extends BootLoadClass
 {
-
-
-	public function generateSummaryButton(): void
+	public static function generateExcerptWithOpenAi(\WP_REST_Request $request): \WP_Error|\WP_REST_Response|\WP_HTTP_Response
 	{
-		// Vérifier si l'écran actuel est celui de l'éditeur de post
-		if (is_admin() && get_current_screen()->id == 'post') {
+		$postContent = $request->get_param('postContent');
+		$options = \BeeAddonsBlocks\Helpers\Options::getAll();
 
-			// Vérifier si l'éditeur Gutenberg est activé
-			if (function_exists('register_block_type')) {
+		if(empty($options['openai_key'])){
+			return rest_ensure_response(['success' => false, 'error' => 'OpenAI key is not set'], 400);
+		}
 
-				// Obtenir l'ID du post actuel
-				$post_id = isset($_GET['post']) ? $_GET['post'] : '';
+		$apiKey = $options['openai_key'];
 
-				// Récupérer les données extraites actuelles
-				$excerpt = get_post_field('post_excerpt', $post_id );
+		$client = \OpenAI::client($apiKey);
+		$data = [
+			"model" => "gpt-3.5-turbo",
+			"messages" => [
+				[
+					"role" => "system",
+					"content" => "Résume le texte suivant en optimisant le nombre de mots pour le référencement naturel. \n
+					Le résumé doit être optimisé pour le sujet principal du contenu et doit faire 100 caractères :"
+				],
+				[
+					"role" => "user",
+					"content" => $postContent
+				]
+			]
+		];
+		$result = $client->chat()->create($data);
 
-				// Afficher le bouton personnalisé avec le lien ou action désiré
-				echo '<div class="my-custom-button">';
-				echo '<a href="#" class="button">Mon bouton personnalisé</a>';
-				echo '</div>';
-
-				// Ajouter un champ masqué avec l'ID du post pour la sauvegarde
-				echo '<input type="hidden" name="post_ID" value="'. $post_id .'" />';
-			}
+		if (!empty($result['choices'][0]['message']['content'])) {
+			$response_data = $result['choices'][0]['message']['content'];
+			return rest_ensure_response(['success' => true, 'excerpt' => $response_data]);
+		} else {
+			return rest_ensure_response(['success' => false, 'error' => 'No content available']);
 		}
 	}
 }

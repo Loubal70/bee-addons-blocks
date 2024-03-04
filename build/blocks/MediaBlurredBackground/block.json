@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "bee-addons-blocks/media-blurred-background",
+  "version": "0.1.0",
+  "title": "Media Blurred Text",
+  "category": "beeAddonsBlocks",
+  "icon": "smiley",
+  "description": "Picture with text on blurred background.",
+  "example": {
+    "attributes": {
+      "MediaUrl": "https://picsum.photos/470/260",
+      "MediaAlt": "Alt text",
+      "MediaId": "339",
+      "InnerTextPosition": "bottom",
+      "InnerTextPadding": 10,
+      "InnerTextBlur": 10
+    },
+    "innerBlocks": [
+      {
+        "name": "core/heading",
+        "attributes": {
+          "content": "Lorem ipsum dolor sit amet"
+        }
+      },
+      {
+        "name": "core/paragraph",
+        "attributes": {
+          "content": "This is an example of block"
+        }
+      }
+    ]
+  },
+  "supports": {
+    "html": false,
+    "align": true,
+    "color": {
+      "background": true,
+      "gradients": true,
+      "text": false
+    },
+    "__experimentalBorder": {
+      "radius": true,
+      "__experimentalDefaultControls": {
+        "radius": true
+      }
+    }
+  },
+  "attributes": {
+    "LinkUrl": {
+      "type": "string"
+    },
+    "InnerTextPosition": {
+      "type": "string",
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ],
+      "default": "bottom"
+    },
+    "InnerTextPadding": {
+      "type": "number",
+      "default": 10
+    },
+    "InnerTextBlur": {
+      "type": "number",
+      "default": 10
+    },
+    "MediaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "MediaAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "MediaId": {
+      "type": "number",
+      "default": ""
+    }
+  },
+  "textdomain": "bee-addons-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
