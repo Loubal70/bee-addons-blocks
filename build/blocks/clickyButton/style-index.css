@@ -1,1 +1,10 @@
-.wp-block-bee-addons-blocks-clicky-button{background:#fbde20;padding:15px;text-decoration:none}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/@wordpress/scripts/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/clickyButton/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-bee-addons-blocks-clicky-button {
+  padding: 15px;
+  background: #fbde20;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

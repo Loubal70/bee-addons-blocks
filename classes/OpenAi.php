@@ -10,7 +10,7 @@ class OpenAi extends BootLoadClass
 		$options = \BeeAddonsBlocks\Helpers\Options::getAll();
 
 		if(empty($options['openai_key'])){
-			return rest_ensure_response(['success' => false, 'error' => 'OpenAI key is not set'], 400);
+			return new \WP_REST_Response( 'Your OpenAI key is not set', 400 );
 		}
 
 		$apiKey = $options['openai_key'];

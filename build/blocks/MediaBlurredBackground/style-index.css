@@ -1,1 +1,56 @@
-.wp-block-bee-addons-blocks-media-blurred-background{position:relative}.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper img,.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper video{display:block;height:100%;max-height:calc(100vh - 32px);max-width:100%;-o-object-fit:cover;object-fit:cover;width:100%}.wp-block-bee-addons-blocks-media-blurred-background .content-wrapper{bottom:0;left:0;position:absolute;right:0}.wp-block-bee-addons-blocks-media-blurred-background .content-wrapper .wp-block-columns{margin-bottom:0}.wp-block-bee-addons-blocks-media-blurred-background.are-vertically-aligned-top .content-wrapper{bottom:auto;top:0}.wp-block-bee-addons-blocks-media-blurred-background.are-vertically-aligned-center .content-wrapper{bottom:auto;top:50%;transform:translateY(-50%)}@media(max-width:768px){.wp-block-bee-addons-blocks-media-blurred-background.alignfull .media-wrapper img{min-height:100vh}.wp-block-bee-addons-blocks-media-blurred-background.alignfull .content-wrapper{padding:30px 20px!important}.admin-bar .wp-block-bee-addons-blocks-media-blurred-background.alignfull .media-wrapper img{min-height:calc(100vh - 46px)}}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/@wordpress/scripts/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/MediaBlurredBackground/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-bee-addons-blocks-media-blurred-background {
+  position: relative;
+}
+.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper img,
+.wp-block-bee-addons-blocks-media-blurred-background .media-wrapper video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 32px);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-bee-addons-blocks-media-blurred-background .content-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.wp-block-bee-addons-blocks-media-blurred-background .content-wrapper .wp-block-columns {
+  margin-bottom: 0;
+}
+.wp-block-bee-addons-blocks-media-blurred-background.are-vertically-aligned-top .content-wrapper {
+  top: 0;
+  bottom: auto;
+}
+.wp-block-bee-addons-blocks-media-blurred-background.are-vertically-aligned-center .content-wrapper {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+  .wp-block-bee-addons-blocks-media-blurred-background.alignfull .media-wrapper img {
+    min-height: 100vh;
+  }
+  .wp-block-bee-addons-blocks-media-blurred-background.alignfull .content-wrapper {
+    padding: 30px 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-bar .wp-block-bee-addons-blocks-media-blurred-background.alignfull .media-wrapper img {
+    min-height: calc(100vh - 46px);
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

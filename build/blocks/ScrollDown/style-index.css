@@ -1,1 +1,24 @@
-.wp-block-bee-addons-blocks-scroll-down{animation:bounce 3s ease-in-out infinite;-moz-animation:bounce 3s ease-in-out infinite;color:#b5b5b5;cursor:pointer;font-size:1rem;text-align:center}.wp-block-bee-addons-blocks-scroll-down .bee-arrow{height:14px;margin:.8rem auto 0;width:28px}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/@wordpress/scripts/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/ScrollDown/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-bee-addons-blocks-scroll-down {
+  text-align: center;
+  color: #B5B5B5;
+  font-size: 1rem;
+  animation: bounce 3s ease-in-out infinite;
+  -moz-animation: bounce 3s ease-in-out infinite;
+  cursor: pointer;
+}
+.wp-block-bee-addons-blocks-scroll-down .bee-arrow {
+  width: 28px;
+  height: 14px;
+  margin: 0.8rem auto 0 auto;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

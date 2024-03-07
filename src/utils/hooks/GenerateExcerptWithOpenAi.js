@@ -26,7 +26,7 @@ export default class GenerateExcerptWithOpenAi {
 				}
 			} else {
 				const errorData = await response.text();
-				console.error('Request has failed : ' + response.status + ' - ' + errorData);
+				alert('Request has failed : ' + response.status + ' - ' + errorData);
 			}
 		} catch (error) {
 			console.error(error);
