@@ -1,1 +1,0 @@
-{"version":3,"file":"blocks/clickyGroup/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://curvy/./src/blocks/clickyGroup/editor.scss"],"sourcesContent":[".wp-block-bee-addons-blocks-clicky-group {\n\tpadding: 10px;\n}\n"],"names":[],"sourceRoot":""}
